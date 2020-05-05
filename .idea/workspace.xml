@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="" />
+    <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_afterburner_2_10_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_javanica_1_5_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_metrics_event_stream_1_5_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_serialization_1_5_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_48_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_48_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_48_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_48_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_48_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_48_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_0_9_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava_reactive_streams_1_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_reactive_2_2_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_2_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_2_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_gateway_core_2_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_gateway_2_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_hystrix_2_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_2_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_synchronoss_cloud_nio_multipart_parser_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_synchronoss_cloud_nio_stream_storage_1_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/gitlab-gateway-web.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/java/com/gitlab/GatewayWebApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/java/com/gitlab/config/SwaggerProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/java/com/gitlab/handler/SwaggerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-common/gitlab-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/gitlab-common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-eureka/src/main/java/com/gitlab/config/ConfigSwagger2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-eureka/target/classes/com/gitlab/config/ConfigSwagger2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,28 +53,48 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1b1mWggAJeNEuJwdf9YSoD75cW2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../loginAndlogon-service" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gitlab.config" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.UsersApplication">
     <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
@@ -43,6 +106,19 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.gitlab.EurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="gitlab-gateway-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gitlab.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gitlab.GatewayWebApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -63,6 +139,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.UsersApplication" />
+        <item itemvalue="Spring Boot.GatewayWebApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
       </list>
     </recent_temporary>
@@ -78,64 +155,96 @@
       <option name="presentableId" value="Default" />
       <updated>1587808006774</updated>
       <workItem from="1587808011765" duration="2026000" />
+      <workItem from="1588649453656" duration="7085000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588657486256">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588657486256" />
+    <state x="232" y="6" key="CommitChangelistDialog2" timestamp="1588659624871">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="232" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588659624871" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587808183697">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587808183697" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1587810049063">
+    <state width="746" height="261" key="GridCell.Tab.0.bottom" timestamp="1588659581991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587810049063" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1587810049063">
+    <state width="746" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588659581991" />
+    <state width="746" height="261" key="GridCell.Tab.0.center" timestamp="1588659581991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587810049063" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1587810049063">
+    <state width="746" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588659581991" />
+    <state width="746" height="261" key="GridCell.Tab.0.left" timestamp="1588659581991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587810049063" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1587810049063">
+    <state width="746" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588659581991" />
+    <state width="746" height="261" key="GridCell.Tab.0.right" timestamp="1588659581991">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587810049063" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1587810049064">
+    <state width="746" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588659581991" />
+    <state width="746" height="261" key="GridCell.Tab.1.bottom" timestamp="1588659581992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587810049064" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1587810049063">
+    <state width="746" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588659581992" />
+    <state width="746" height="261" key="GridCell.Tab.1.center" timestamp="1588659581992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1587810049063" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1587810049063">
+    <state width="746" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588659581992" />
+    <state width="746" height="261" key="GridCell.Tab.1.left" timestamp="1588659581992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1587810049063" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1587810049063">
+    <state width="746" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588659581992" />
+    <state width="746" height="261" key="GridCell.Tab.1.right" timestamp="1588659581992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587810049063" />
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1587810049064">
+    <state width="746" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588659581992" />
+    <state width="746" height="261" key="GridCell.Tab.2.bottom" timestamp="1588659581992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587810049064" />
-    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1587810049064">
+    <state width="746" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588659581992" />
+    <state width="746" height="261" key="GridCell.Tab.2.center" timestamp="1588659581992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1587810049064" />
-    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1587810049064">
+    <state width="746" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1588659581992" />
+    <state width="746" height="261" key="GridCell.Tab.2.left" timestamp="1588659581992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1587810049064" />
-    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1587810049064">
+    <state width="746" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1588659581992" />
+    <state width="746" height="261" key="GridCell.Tab.2.right" timestamp="1588659581992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1587810049064" />
+    <state width="746" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1588659581992" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1588657306143">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1588657306143" />
+    <state x="270" y="54" key="SettingsEditor" timestamp="1588659165576">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588659165576" />
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2" timestamp="1588659363108">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588659363108" />
+    <state x="496" y="203" key="git4idea.merge.GitPullDialog" timestamp="1588659238377">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="496" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1588659238377" />
+    <state x="252" y="44" key="new project wizard" timestamp="1588652333862">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="252" y="44" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1588652333862" />
   </component>
 </project>

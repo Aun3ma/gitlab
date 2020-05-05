@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/gitlab-common-db/gitlab-common-db.iml" filepath="$PROJECT_DIR$/gitlab-common-db/gitlab-common-db.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab-eureka/gitlab-eureka.iml" filepath="$PROJECT_DIR$/gitlab-eureka/gitlab-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab-gateway/gitlab-gateway.iml" filepath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/gitlab-gateway-web.iml" filepath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/gitlab-gateway-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab-service/gitlab-service.iml" filepath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab-service-api/gitlab-service-api.iml" filepath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" filepath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" />

@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/gitlab-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gitlab-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java" charset="UTF-8" />
   </component>
