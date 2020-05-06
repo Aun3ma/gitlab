@@ -29,7 +29,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Swagger API")
-                .description("users")
+                .description("projects")
                 .termsOfServiceUrl("")
                 .contact(new Contact("wd", "", ""))
                 .version("2.0")

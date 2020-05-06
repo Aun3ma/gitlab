@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>gitlab-service-users-api</module>
+        <module>gitlab-service-projects-api</module>
     </modules>
     <artifactId>gitlab-service-api</artifactId>
 

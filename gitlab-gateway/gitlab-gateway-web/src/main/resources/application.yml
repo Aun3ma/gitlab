@@ -35,6 +35,17 @@ spring:
                 redis-rate-limiter.replenishRate: 1
                 # 允许并发数【宽限个数】
                 redis-rate-limiter.burstCapacity: 4
+
+        - id: gitlab_projects_route
+          uri: lb://projects
+          predicates:
+            - Path=/api/projects/**
+          filters:
+            - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 4
 server:
   port: 9001
 eureka:
