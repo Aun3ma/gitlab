@@ -9,6 +9,8 @@
       <module fileurl="file://$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/gitlab-gateway-web.iml" filepath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/gitlab-gateway-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab-service/gitlab-service.iml" filepath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab-service-api/gitlab-service-api.iml" filepath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" filepath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/gitlab-service-projects-api.iml" filepath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/gitlab-service-projects-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" filepath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/gitlab-service-users-api.iml" filepath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/gitlab-service-users-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/gitlab.parent.iml" filepath="$PROJECT_DIR$/gitlab.parent.iml" />

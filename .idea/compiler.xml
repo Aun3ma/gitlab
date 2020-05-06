@@ -2,11 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gitlab-service-projects" />
         <module name="gitlab-common" />
+        <module name="gitlab-service-projects-api" />
         <module name="gitlab-eureka" />
         <module name="gitlab-common-db" />
         <module name="gitlab-service-users-api" />
@@ -22,6 +25,8 @@
       <module name="gitlab-gateway-web" target="1.8" />
       <module name="gitlab-service" target="1.8" />
       <module name="gitlab-service-api" target="1.8" />
+      <module name="gitlab-service-projects" target="1.8" />
+      <module name="gitlab-service-projects-api" target="1.8" />
       <module name="gitlab-service-users" target="1.8" />
       <module name="gitlab-service-users-api" target="1.8" />
       <module name="gitlab.parent" target="1.8" />
@@ -33,6 +38,8 @@
       <module name="gitlab-common-db" options="-parameters" />
       <module name="gitlab-eureka" options="-parameters" />
       <module name="gitlab-gateway-web" options="-parameters" />
+      <module name="gitlab-service-projects" options="-parameters" />
+      <module name="gitlab-service-projects-api" options="-parameters" />
       <module name="gitlab-service-users" options="-parameters" />
       <module name="gitlab-service-users-api" options="-parameters" />
     </option>
