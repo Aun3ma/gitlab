@@ -44,8 +44,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                String encode = DigestUtils.md5DigestAsHex(charSequence.toString().getBytes());
 //                boolean res = s.equals( encode );
 //                return res;
-                System.out.println("dao c:"+charSequence.toString());
-                System.out.println("dao s:"+s);
                 boolean res = s.equals( charSequence.toString() );
                 return res;
             }
