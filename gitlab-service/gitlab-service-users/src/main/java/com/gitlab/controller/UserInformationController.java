@@ -2,12 +2,19 @@ package com.gitlab.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.gitlab.service.UserInformationService;
+import com.gitlab.users.dto.DtoUserInformation;
 import com.gitlab.users.pojo.UserInformation;
+import entity.IdWorker;
 import entity.Result;
 import entity.StatusCode;
 import io.swagger.annotations.*;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.*;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,6 +30,46 @@ public class UserInformationController {
 
     @Autowired
     private UserInformationService userInformationService;
+
+    /**
+     * 登录
+     */
+    @ApiOperation(value = "",notes = "登陆",tags = {"UserInformationController"})
+    @PostMapping(value = "/login")
+    public Result login( String username,String password ) throws AuthenticationException {
+        // 登录成功会返回Token给用户
+        return new Result(true,StatusCode.OK,"登陆成功",userInformationService.login(username , password));
+    }
+
+
+    public Date getFormatDate(){
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = formatter.format(date);
+        return java.sql.Date.valueOf(dateString);
+    }
+
+    /***
+     * 注册
+     */
+    @ApiOperation(value = "DtoUserInformation添加",notes = "注册",tags = {"UserInformationController"})
+    @PostMapping(value = "/register")
+    public Result register(@RequestBody  @ApiParam(name = "DtoUserInformation对象",value = "传入JSON数据",required = true) DtoUserInformation dtouserInformation) {
+        UserInformation user = new UserInformation();
+        user.setEmail(dtouserInformation.getEmail());
+        user.setPassword(dtouserInformation.getPassword());
+        if(userInformationService.findList(user).isEmpty()){
+            IdWorker idWorker = new IdWorker(0,0);
+            long id = idWorker.nextId();
+            user.setUserId(Long.toString(id));
+            user.setUserName(dtouserInformation.getEmail());
+            user.setCreateTime(getFormatDate());
+            user.setUpdateTime(getFormatDate());
+            userInformationService.add(user);
+            return new Result(true,StatusCode.OK,"添加成功");
+        }
+        return new Result(false,StatusCode.LOGINERROR,"用户名已存在");
+    }
 
     /***
      * UserInformation分页条件搜索实现
@@ -105,18 +152,18 @@ public class UserInformationController {
         return new Result(true,StatusCode.OK,"修改成功");
     }
 
-    /***
-     * 新增UserInformation数据
-     * @param userInformation
-     * @return
-     */
-    @ApiOperation(value = "UserInformation添加",notes = "添加UserInformation方法详情",tags = {"UserInformationController"})
-    @PostMapping
-    public Result add(@RequestBody  @ApiParam(name = "UserInformation对象",value = "传入JSON数据",required = true) UserInformation userInformation) {
-        //调用UserInformationService实现添加UserInformation
-        userInformationService.add(userInformation);
-        return new Result(true,StatusCode.OK,"添加成功");
-    }
+//    /***
+//     * 新增UserInformation数据
+//     * @param userInformation
+//     * @return
+//     */
+//    @ApiOperation(value = "UserInformation添加",notes = "添加UserInformation方法详情",tags = {"UserInformationController"})
+//    @PostMapping
+//    public Result add(@RequestBody  @ApiParam(name = "UserInformation对象",value = "传入JSON数据",required = true) UserInformation userInformation) {
+//        //调用UserInformationService实现添加UserInformation
+//        userInformationService.add(userInformation);
+//        return new Result(true,StatusCode.OK,"添加成功");
+//    }
 
     /***
      * 根据ID查询UserInformation数据

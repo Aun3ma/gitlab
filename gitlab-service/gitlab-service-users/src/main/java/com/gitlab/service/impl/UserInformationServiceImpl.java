@@ -2,10 +2,17 @@ package com.gitlab.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.gitlab.config.JwtTokenUtil;
 import com.gitlab.dao.UserInformationMapper;
 import com.gitlab.service.UserInformationService;
 import com.gitlab.users.pojo.UserInformation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
@@ -21,6 +28,24 @@ public class UserInformationServiceImpl implements UserInformationService {
     @Autowired
     private UserInformationMapper userInformationMapper;
 
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
+
+    @Autowired
+    private JwtTokenUtil jwtTokenUtil;
+
+    @Override
+    public String login(String username, String password) {
+        UsernamePasswordAuthenticationToken upToken = new UsernamePasswordAuthenticationToken( username, password );
+        Authentication authentication = authenticationManager.authenticate(upToken);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        UserDetails userDetails = userDetailsService.loadUserByUsername( username );
+        String token = jwtTokenUtil.generateToken(userDetails);
+        return token;
+    }
 
     /**
      * UserInformation条件+分页查询
@@ -76,7 +101,7 @@ public class UserInformationServiceImpl implements UserInformationService {
         Example example = new Example(UserInformation.class);
         Example.Criteria criteria = example.createCriteria();
         if(userInformation != null) {
-            // write it yourself
+                criteria.andEqualTo("email",userInformation.getEmail());
         }
         return example;
     }
