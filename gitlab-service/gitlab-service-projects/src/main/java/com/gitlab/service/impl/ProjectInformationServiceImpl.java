@@ -1,14 +1,41 @@
 package com.gitlab.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.gitlab.dao.ProjectInformationMapper;
 import com.gitlab.projects.pojo.ProjectInformation;
 import com.gitlab.service.ProjectInformationService;
+import com.netflix.ribbon.proxy.annotation.Http;
+import entity.Result;
+import org.apache.http.Consts;
+import org.apache.http.HttpEntity;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.BasicCookieStore;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
+
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 /****
  * @Author:shenjunjie
@@ -20,7 +47,6 @@ public class ProjectInformationServiceImpl implements ProjectInformationService 
 
     @Autowired
     private ProjectInformationMapper projectInformationMapper;
-
 
     /**
      * ProjectInformation条件+分页查询

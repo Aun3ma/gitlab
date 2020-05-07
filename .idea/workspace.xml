@@ -1,33 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="更新了代码上传的基础功能(没用到gitlab的api)">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/gitlab-service-projects-api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/src/main/java/com/gitlab/projects/pojo/ProjectInformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/ProjectsApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectInformationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/dao/ProjectInformationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/ProjectInformationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectInformationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/ProjectManagementService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectManagementServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/tools/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/AuthMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/GitlabAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/GitlabAPIException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/Pagination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/TokenType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/http/GitlabHTTPRequestor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/http/Query.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/CommitComment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabAbstractMember.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabAccessLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabAward.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabBranch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabBranchCommit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabBuild.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabBuildVariable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabCommit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabCommitComparison.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabCommitDiff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabCommitStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabEmailonPushProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabGroupMember.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabIssue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabMergeRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabMilestone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabNamespace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabNote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabPermission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabProject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabProjectAccessLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabProjectHook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabProjectMember.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabProjectSharedGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabRelease.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabRepositoryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabSSHKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabServiceEmailOnPush.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabSystemHook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabTrigger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabUpload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/org/gitlab/api/models/GitlabUserIdentity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/xxx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xxx.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-common/src/main/java/entity/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/src/main/java/entity/StatusCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-common/target/classes/entity/StatusCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/target/classes/entity/StatusCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/src/main/java/com/gitlab/users/pojo/UserInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/src/main/java/com/gitlab/users/pojo/UserInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-common-db/gitlab-common-db.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common-db/gitlab-common-db.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-common/gitlab-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/gitlab-common.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-eureka/gitlab-eureka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-eureka/gitlab-eureka.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/gitlab-gateway-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/gitlab-gateway-web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/gitlab-service-projects-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/gitlab-service-projects-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/gitlab-service-users-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/gitlab-service-users-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/ProjectInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/ProjectInformationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectInformationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab.parent.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab.parent.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +85,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -68,18 +117,38 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../loginAndlogon-service" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gitlab-service/gitlab-service-projects" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\19134\Desktop\缺陷分析\gitlab\gitlab-service\gitlab-service-projects" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.gitlab.config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProjectsApplication">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EurekaApplication">
     <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="gitlab-eureka" />
       <extension name="coverage">
@@ -141,6 +210,31 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@73e15f84" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@73e15f84" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b064613b" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@73e15f84" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@72c54ed7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -155,6 +249,7 @@
       <workItem from="1588649453656" duration="7662000" />
       <workItem from="1588661185515" duration="984000" />
       <workItem from="1588726493114" duration="4127000" />
+      <workItem from="1588822288937" duration="20924000" />
     </task>
     <task id="LOCAL-00001" summary="更新了网关、接口文档">
       <created>1588659710777</created>
@@ -169,6 +264,19 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="更新了网关、接口文档" />
@@ -176,93 +284,49 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新了代码上传的基础功能(没用到gitlab的api)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588657486256">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588657486256" />
-    <state x="232" y="6" key="CommitChangelistDialog2" timestamp="1588740088066">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="232" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588740088066" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587808183697">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587808183697" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1588740146304">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588740146304" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1588740146304">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588740146304" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1588740146304">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588740146304" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1588740146304">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588740146304" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588740146154">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1588740146154">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1588740146153">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588740146153" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1588740146154">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1588740146154">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1588740146154">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1588740146154">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1588740146154">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1588657306143">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1588657306143" />
-    <state x="270" y="54" key="SettingsEditor" timestamp="1588659165576">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588659165576" />
-    <state x="366" y="118" key="Vcs.Push.Dialog.v2" timestamp="1588660078757">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588660078757" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588727606498">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588727606498" />
-    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588739867934">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1588739867934" />
-    <state x="496" y="203" key="git4idea.merge.GitPullDialog" timestamp="1588739920634">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="496" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1588739920634" />
-    <state x="356" y="74" key="new project wizard" timestamp="1588739025138">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="356" y="74" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1588739025138" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="232" y="6" key="CommitChangelistDialog2" />
+    <state x="232" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" />
+    <state x="549" y="167" key="FileChooserDialogImpl" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="270" y="54" key="SettingsEditor" />
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" />
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2" />
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
+    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" />
+    <state x="496" y="203" key="git4idea.merge.GitPullDialog" />
+    <state x="496" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="356" y="74" key="new project wizard" />
+    <state x="356" y="74" key="new project wizard/0.0.1536.824@0.0.1536.824" />
   </component>
 </project>
