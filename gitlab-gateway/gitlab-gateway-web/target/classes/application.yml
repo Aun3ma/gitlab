@@ -20,7 +20,7 @@ spring:
           # 路由断言，路由规则配置
           predicates:
             # 路径请求过滤，以/brand开始的请求都路由到uri上去
-            - Path=/api/users/**
+            - Path=/api/userInformation/**
             #- Path=/**
           filters:
             # 去除path后的第一个斜杠（如/api）
@@ -28,24 +28,12 @@ spring:
             # 自动加前缀/brand
             #- PrefixPath=/brand
 
-            # 局部限流过滤器
-            - name: RequestRateLimiter # 请求数限流，名字不能乱写，使用默认的factory
-              args:
-                # 每秒允许的请求数
-                redis-rate-limiter.replenishRate: 1
-                # 允许并发数【宽限个数】
-                redis-rate-limiter.burstCapacity: 4
-
         - id: gitlab_projects_route
           uri: lb://projects
           predicates:
             - Path=/api/projects/**
           filters:
             - StripPrefix=1
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 1
-                redis-rate-limiter.burstCapacity: 4
 server:
   port: 9001
 eureka:
@@ -61,3 +49,17 @@ management:
     web:
       exposure:
         include: true
+secure:
+  ignored:
+    urls: #安全路径白名单
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger/**
+      - /**/v2/api-docs
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.ico
+      - /webjars/springfox-swagger-ui/**
+      - /actuator/**
+      - /druid/**

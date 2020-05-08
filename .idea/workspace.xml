@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="">
-<<<<<<< HEAD
-    <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="更新了代码上传的基础功能(没用到gitlab的api)">
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/gitlab-service-projects-api.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/pom.xml" afterDir="false" />
@@ -30,13 +28,11 @@
       <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/ProjectManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/ProjectManagementServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-common/src/main/java/entity/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/src/main/java/entity/StatusCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-common/target/classes/entity/StatusCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/target/classes/entity/StatusCode.class" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-common/target/classes/entity/Result.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-common/target/classes/entity/StatusCode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-eureka/target/classes/application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-eureka/target/classes/com/gitlab/EurekaApplication.class" beforeDir="false" />
->>>>>>> fufu
       <change beforePath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/target/classes/com/gitlab/users/pojo/UserInformation.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/config/SecurityConfig.java" afterDir="false" />
@@ -97,6 +93,23 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.gitlab.config" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.UsersApplication">
     <configuration name="UserInformationController.getFormatDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -170,15 +183,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.UsersApplication" />
+        <item itemvalue="Spring Boot.ProjectsApplication" />
         <item itemvalue="Spring Boot.GatewayWebApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
-<<<<<<< HEAD
         <item itemvalue="Spring Boot.UsersApplication" />
-        <item itemvalue="Spring Boot.UsersApplication" />
-=======
-        <item itemvalue="JUnit.UserInformationController.getFormatDate" />
->>>>>>> fufu
-        <item itemvalue="Spring Boot.ProjectsApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -220,11 +228,9 @@
       <workItem from="1587808011765" duration="2026000" />
       <workItem from="1588649453656" duration="7662000" />
       <workItem from="1588661185515" duration="984000" />
-<<<<<<< HEAD
       <workItem from="1588726493114" duration="4127000" />
       <workItem from="1588822288937" duration="21608000" />
       <workItem from="1588916676667" duration="11398000" />
-=======
       <workItem from="1588726493114" duration="4315000" />
       <workItem from="1588740670967" duration="14684000" />
       <workItem from="1588756589527" duration="81000" />
@@ -232,7 +238,6 @@
       <workItem from="1588763033092" duration="5776000" />
       <workItem from="1588770735920" duration="3472000" />
       <workItem from="1588774276375" duration="2642000" />
->>>>>>> fufu
     </task>
     <task id="LOCAL-00001" summary="更新了网关、接口文档">
       <created>1588659710777</created>
