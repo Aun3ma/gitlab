@@ -57,8 +57,8 @@ public class ProjectManagementController {
 
         projectManagementService.uploadFile(projectID, file);
 
-//        File del = new File(file.toURI());
-//        del.delete();
+        File del = new File(file.toURI());
+        del.delete();
 
         return new Result(true, StatusCode.OK, "上传成功");
     }

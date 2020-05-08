@@ -11,7 +11,9 @@ import com.gitlab.service.ProjectManagementService;
 import com.netflix.ribbon.proxy.Utils;
 import com.netflix.ribbon.proxy.annotation.Http;
 import entity.Result;
+import org.apache.commons.io.FileUtils;
 import org.apache.http.Consts;
+import org.apache.http.HttpConnection;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
@@ -20,6 +22,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -40,12 +43,16 @@ import org.springframework.web.multipart.MultipartFile;
 import tk.mybatis.mapper.entity.Example;
 
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.gitlab.api.*;
+
+import javax.swing.table.TableRowSorter;
 
 @Service
 public class ProjectManagementServiceImpl implements ProjectManagementService {
@@ -63,12 +70,10 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
 //
 //        System.out.println(gitlabAPI.uploadFile(gitlabProject, uploadFile).getUrl());
 
+
+
         String privateToken = "76hSmH3ihw9f_29SadRS";
-        String url = "http://111.231.248.99:81/api/v4/projects/5/uploads";
-
-        List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-        formparams.add(new BasicNameValuePair("file", "xxx.java"));
-
+        String url = "http://111.231.248.99:81/api/v4/projects/5/repository/files/" + uploadFile.getName();
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
@@ -78,18 +83,76 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
 
         httpPost.setConfig(requestConfig);
 
-        UrlEncodedFormEntity encodedFormEntity = new UrlEncodedFormEntity(formparams, Consts.UTF_8);
+        String fileContent = FileUtils.readFileToString(uploadFile, "utf-8");
 
-        httpPost.addHeader("Content-Type", "multipart/form-data; boundary=-----------------------***");
+        net.minidev.json.JSONObject jsonObject = new net.minidev.json.JSONObject();
+        jsonObject.appendField("branch", "master");
+        jsonObject.appendField("content", fileContent);
+        jsonObject.appendField("commit_message", "New Code File");
+
+        String json = jsonObject.toJSONString();
+
+        System.out.println(json);
+
+        StringEntity requestEntity = new StringEntity(json,"utf-8");
+        requestEntity.setContentType("application/json");
 
         httpPost.addHeader("PRIVATE-TOKEN", privateToken);
-        httpPost.setEntity(encodedFormEntity);
+        httpPost.setEntity(requestEntity);
         CloseableHttpResponse httpResponse = httpClient.execute(httpPost);
         HttpEntity entity = httpResponse.getEntity();
 
         String message = EntityUtils.toString(entity);
 
         System.out.println(message);
+
+
+//        final String newLine = "\r\n";
+//        final String boundaryPrefix = "--";
+//        String BOUNDARY = "========7d4a6d158c9";
+//        URL url = new URL("http://111.231.248.99:81/api/v4/projects/" + projectID + "/repository/files");
+//        HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+//        connection.setRequestMethod("POST");
+//        connection.setDoOutput(true);
+//        connection.setDoInput(true);
+//        connection.setUseCaches(false);
+//        connection.setRequestProperty("PRIVATE-TOKEN", "76hSmH3ihw9f_29SadRS");
+//        connection.setRequestProperty("connection", "Keep-Alive");
+//        connection.setRequestProperty("Charset", "UTF-8");
+//        connection.setRequestProperty("Content-Type", "application/json; boundary=" + BOUNDARY);
+//
+//        OutputStream outputStream = new DataOutputStream(connection.getOutputStream());
+//        StringBuilder stringBuilder = new StringBuilder();
+//        stringBuilder.append(boundaryPrefix );
+//        stringBuilder.append(BOUNDARY);
+//        stringBuilder.append(newLine);
+//        stringBuilder.append("Content-Disposition: form-data; name=\"file\"; filename=\"" + uploadFile.getName()
+//                + "\"" + newLine);
+//        stringBuilder.append("Content-Type: application/octet-stream");
+//
+//        stringBuilder.append(newLine);
+//        stringBuilder.append(newLine);
+//
+//        outputStream.write(stringBuilder.toString().getBytes());
+//
+//        DataInputStream dataInputStream = new DataInputStream(new FileInputStream(uploadFile));
+//        byte[] bufferOut = new byte[1024];
+//        int bytes = 0;
+//        while ((bytes = dataInputStream.read(bufferOut)) != -1) {
+//            outputStream.write(bufferOut, 0, bytes);
+//        }
+//        outputStream.write(newLine.getBytes());
+//        dataInputStream.close();
+//
+//        byte[] end_data = (newLine + boundaryPrefix + BOUNDARY + boundaryPrefix + newLine)
+//                .getBytes();
+//        outputStream.write(end_data);
+//        outputStream.flush();
+//        outputStream.close();
+//
+//        System.out.println(connection.getResponseMessage());
+//        System.out.println(connection.getResponseCode());
+//        connection.disconnect();
 
         return true;
     }
