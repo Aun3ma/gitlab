@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="">
+<<<<<<< HEAD
     <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="更新了代码上传的基础功能(没用到gitlab的api)">
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/gitlab-service-projects-api.iml" afterDir="false" />
@@ -29,11 +30,22 @@
       <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/ProjectManagementServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/ProjectManagementServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-common/src/main/java/entity/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/src/main/java/entity/StatusCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-common/target/classes/entity/StatusCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/target/classes/entity/StatusCode.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-common/target/classes/entity/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-common/target/classes/entity/StatusCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-eureka/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-eureka/target/classes/com/gitlab/EurekaApplication.class" beforeDir="false" />
+>>>>>>> fufu
       <change beforePath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/src/main/java/com/gitlab/users/pojo/UserInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/src/main/java/com/gitlab/users/pojo/UserInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/config/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/target/classes/com/gitlab/users/pojo/UserInformation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/target/classes/com/gitlab/UsersApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/target/classes/com/gitlab/controller/UserInformationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/target/classes/com/gitlab/dao/UserInformationMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/target/classes/com/gitlab/service/UserInformationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/target/classes/com/gitlab/service/impl/UserInformationServiceImpl.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +87,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../loginAndlogon-service" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="ReactorSettings">
@@ -86,7 +98,23 @@
       <recent name="com.gitlab.config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProjectsApplication">
+  <component name="RunManager" selected="Spring Boot.UsersApplication">
+    <configuration name="UserInformationController.getFormatDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gitlab-service-users" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gitlab.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.gitlab.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.gitlab.controller.UserInformationController" />
+      <option name="METHOD_NAME" value="getFormatDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="gitlab-eureka" />
       <extension name="coverage">
@@ -141,11 +169,15 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ProjectsApplication" />
+        <item itemvalue="Spring Boot.UsersApplication" />
         <item itemvalue="Spring Boot.GatewayWebApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
+<<<<<<< HEAD
         <item itemvalue="Spring Boot.UsersApplication" />
         <item itemvalue="Spring Boot.UsersApplication" />
+=======
+        <item itemvalue="JUnit.UserInformationController.getFormatDate" />
+>>>>>>> fufu
         <item itemvalue="Spring Boot.ProjectsApplication" />
       </list>
     </recent_temporary>
@@ -188,9 +220,19 @@
       <workItem from="1587808011765" duration="2026000" />
       <workItem from="1588649453656" duration="7662000" />
       <workItem from="1588661185515" duration="984000" />
+<<<<<<< HEAD
       <workItem from="1588726493114" duration="4127000" />
       <workItem from="1588822288937" duration="21608000" />
       <workItem from="1588916676667" duration="11398000" />
+=======
+      <workItem from="1588726493114" duration="4315000" />
+      <workItem from="1588740670967" duration="14684000" />
+      <workItem from="1588756589527" duration="81000" />
+      <workItem from="1588756986862" duration="2937000" />
+      <workItem from="1588763033092" duration="5776000" />
+      <workItem from="1588770735920" duration="3472000" />
+      <workItem from="1588774276375" duration="2642000" />
+>>>>>>> fufu
     </task>
     <task id="LOCAL-00001" summary="更新了网关、接口文档">
       <created>1588659710777</created>
@@ -199,7 +241,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588659710777</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="更新了代码上传的基础功能(没用到gitlab的api)">
+      <created>1588740236204</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588740236204</updated>
+    </task>
+    <task id="LOCAL-00003" summary="更新了token检验和注册和登录的检测">
+      <created>1588768029962</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588768029962</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,85 +265,94 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="更新了网关、接口文档" />
     <MESSAGE value="更新了代码上传的基础功能(没用到gitlab的api)" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了代码上传的基础功能(没用到gitlab的api)" />
+    <MESSAGE value="更新了token检验和注册和登录的检测" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了token检验和注册和登录的检测" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1588755136888">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1588755136888" />
+    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1588751794352">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1588751794352" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588657486256">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1588657486256" />
-    <state x="232" y="6" key="CommitChangelistDialog2" timestamp="1588740088066">
+    <state x="232" y="6" key="CommitChangelistDialog2" timestamp="1588768024575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="232" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588740088066" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587808183697">
+    <state x="232" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1588768024575" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1588743691439">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587808183697" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1588740146304">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588743691439" />
+    <state width="1493" height="246" key="GridCell.Tab.0.bottom" timestamp="1588777259924">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588740146304" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1588740146304">
+    <state width="1493" height="246" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588777259924" />
+    <state width="1493" height="246" key="GridCell.Tab.0.center" timestamp="1588777259923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588740146304" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1588740146304">
+    <state width="1493" height="246" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588777259923" />
+    <state width="1493" height="246" key="GridCell.Tab.0.left" timestamp="1588777259923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588740146304" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1588740146304">
+    <state width="1493" height="246" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588777259923" />
+    <state width="1493" height="246" key="GridCell.Tab.0.right" timestamp="1588777259923">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588740146304" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588740146154">
+    <state width="1493" height="246" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588777259923" />
+    <state width="1493" height="246" key="GridCell.Tab.1.bottom" timestamp="1588777259674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1588740146154">
+    <state width="1493" height="246" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588777259674" />
+    <state width="1493" height="246" key="GridCell.Tab.1.center" timestamp="1588777259674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1588740146153">
+    <state width="1493" height="246" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588777259674" />
+    <state width="1493" height="246" key="GridCell.Tab.1.left" timestamp="1588777259674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588740146153" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1588740146154">
+    <state width="1493" height="246" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588777259674" />
+    <state width="1493" height="246" key="GridCell.Tab.1.right" timestamp="1588777259674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1588740146154">
+    <state width="1493" height="246" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588777259674" />
+    <state width="1493" height="246" key="GridCell.Tab.2.bottom" timestamp="1588777259675">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1588740146154">
+    <state width="1493" height="246" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588777259675" />
+    <state width="1493" height="246" key="GridCell.Tab.2.center" timestamp="1588777259674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1588740146154">
+    <state width="1493" height="246" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1588777259674" />
+    <state width="1493" height="246" key="GridCell.Tab.2.left" timestamp="1588777259674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1588740146154">
+    <state width="1493" height="246" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1588777259674" />
+    <state width="1493" height="246" key="GridCell.Tab.2.right" timestamp="1588777259674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1588740146154" />
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1588657306143">
+    <state width="1493" height="246" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1588777259674" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1588744698865">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1588657306143" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1588744698865" />
     <state x="270" y="54" key="SettingsEditor" timestamp="1588659165576">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588659165576" />
-    <state x="366" y="118" key="Vcs.Push.Dialog.v2" timestamp="1588660078757">
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2" timestamp="1588768072302">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588660078757" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588727606498">
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1588768072302" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1588774274244">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588727606498" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1588774274244" />
     <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588739867934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -300,5 +365,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="356" y="74" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1588739025138" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/gitlab$GatewayWebApplication.ic" NAME="GatewayWebApplication Coverage Results" MODIFIED="1588756446413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.gitlab.*</FILTER>
+    </SUITE>
   </component>
 </project>

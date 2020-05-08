@@ -11,6 +11,9 @@ import java.util.List;
  *****/
 public interface UserInformationService {
 
+
+    String login(String username, String password);
+
     /***
      * UserInformation多条件分页查询
      * @param userInformation
