@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_2_6_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_2_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_2_2_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_2_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/gitlab-service-projects-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/gitlab-service-projects-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/gitlab-service-users-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/gitlab-service-users-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-users-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/controller/ProjectInformationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/controller/ProjectInformationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/controller/ProjectManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/controller/ProjectManagementController.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="fufu" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -76,16 +65,6 @@
       <set>
         <option value="SpringBootApplicationConfigurationType" />
       </set>
-    </option>
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.UsersApplication">
@@ -157,39 +136,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.UserInformationController.getFormatDate" />
+      <item itemvalue="Spring Boot.UsersApplication" />
+      <item itemvalue="Spring Boot.EurekaApplication" />
+      <item itemvalue="Spring Boot.GatewayWebApplication" />
+      <item itemvalue="Spring Boot.ProjectsApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.UsersApplication" />
         <item itemvalue="Spring Boot.ProjectsApplication" />
         <item itemvalue="Spring Boot.GatewayWebApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
-        <item itemvalue="Spring Boot.UsersApplication" />
-        <item itemvalue="Spring Boot.UsersApplication" />
+        <item itemvalue="JUnit.UserInformationController.getFormatDate" />
       </list>
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@94c78778" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@94c78778" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@20d26183" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@94c78778" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@6e948439" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -217,6 +200,7 @@
       <workItem from="1588774276375" duration="2642000" />
       <workItem from="1588936759374" duration="332000" />
       <workItem from="1589199712455" duration="1544000" />
+      <workItem from="1589201678410" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="更新了网关、接口文档">
       <created>1588659710777</created>
@@ -266,54 +250,84 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新了token检验和注册和登录的检测" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" />
-    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" />
-    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" />
-    <state x="232" y="6" key="CommitChangelistDialog2" />
-    <state x="232" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" />
-    <state x="549" y="167" key="FileChooserDialogImpl" />
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.0.bottom" />
-    <state width="1493" height="246" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.0.center" />
-    <state width="1493" height="246" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.0.left" />
-    <state width="1493" height="246" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.0.right" />
-    <state width="1493" height="246" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.1.bottom" />
-    <state width="1493" height="246" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.1.center" />
-    <state width="1493" height="246" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.1.left" />
-    <state width="1493" height="246" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.1.right" />
-    <state width="1493" height="246" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.2.bottom" />
-    <state width="1493" height="246" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.2.center" />
-    <state width="1493" height="246" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.2.left" />
-    <state width="1493" height="246" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" />
-    <state width="1493" height="246" key="GridCell.Tab.2.right" />
-    <state width="1493" height="246" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" />
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog" />
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" />
-    <state x="270" y="54" key="SettingsEditor" />
-    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" />
-    <state x="366" y="118" key="Vcs.Push.Dialog.v2" />
-    <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" />
-    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
-    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" />
-    <state x="496" y="203" key="git4idea.merge.GitPullDialog" />
-    <state x="496" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" />
-    <state x="356" y="74" key="new project wizard" />
-    <state x="356" y="74" key="new project wizard/0.0.1536.824@0.0.1536.824" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1589201553772" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1589201558758">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1589201558758" />
+    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589201553772" />
+    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589201553772" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state x="232" y="6" key="CommitChangelistDialog2" timestamp="1589201553772" />
+    <state x="232" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589201553772" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state width="1024" height="210" key="GridCell.Tab.0.bottom" timestamp="1589202435404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589202435404" />
+    <state width="1024" height="210" key="GridCell.Tab.0.center" timestamp="1589202435404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589202435404" />
+    <state width="1024" height="210" key="GridCell.Tab.0.left" timestamp="1589202435404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589202435404" />
+    <state width="1024" height="210" key="GridCell.Tab.0.right" timestamp="1589202435404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589202435404" />
+    <state width="1024" height="210" key="GridCell.Tab.1.bottom" timestamp="1589202435405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589202435405" />
+    <state width="1024" height="210" key="GridCell.Tab.1.center" timestamp="1589202435404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589202435404" />
+    <state width="1024" height="210" key="GridCell.Tab.1.left" timestamp="1589202435404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589202435404" />
+    <state width="1024" height="210" key="GridCell.Tab.1.right" timestamp="1589202435405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589202435405" />
+    <state width="1024" height="210" key="GridCell.Tab.2.bottom" timestamp="1589202435406">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589202435406" />
+    <state width="1024" height="210" key="GridCell.Tab.2.center" timestamp="1589202435405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1589202435405" />
+    <state width="1024" height="210" key="GridCell.Tab.2.left" timestamp="1589202435405">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1589202435405" />
+    <state width="1024" height="210" key="GridCell.Tab.2.right" timestamp="1589202435406">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="210" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1589202435406" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1589201553772" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state x="270" y="54" key="SettingsEditor" timestamp="1589201553772" />
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2" timestamp="1589201553772" />
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589201678743">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589201678743" />
+    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589201553772" />
+    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state x="496" y="203" key="git4idea.merge.GitPullDialog" timestamp="1589201553772" />
+    <state x="496" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
+    <state x="356" y="74" key="new project wizard" timestamp="1589201553772" />
+    <state x="356" y="74" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1589201553772" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/gitlab$GatewayWebApplication.ic" NAME="GatewayWebApplication Coverage Results" MODIFIED="1588756446413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

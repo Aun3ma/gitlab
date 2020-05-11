@@ -23,7 +23,7 @@ import java.util.List;
 
 @Api(value = "ProjectManagementController")
 @RestController
-@RequestMapping("/projectManagement")
+@RequestMapping("/projects/projectManagement")
 @CrossOrigin
 public class ProjectManagementController {
 
