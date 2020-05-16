@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.gitlab.config.JwtTokenUtil;
 import com.gitlab.dao.UserInformationMapper;
 import com.gitlab.service.UserInformationService;
+import com.gitlab.users.dto.DtoLoginInformation;
 import com.gitlab.users.pojo.UserInformation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -42,7 +43,7 @@ public class UserInformationServiceImpl implements UserInformationService {
         UsernamePasswordAuthenticationToken upToken = new UsernamePasswordAuthenticationToken( username, password );
         Authentication authentication = authenticationManager.authenticate(upToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        UserDetails userDetails = userDetailsService.loadUserByUsername( username );
+        DtoLoginInformation userDetails = (DtoLoginInformation) this.userDetailsService.loadUserByUsername( username );
         String token = jwtTokenUtil.generateToken(userDetails);
         return token;
     }

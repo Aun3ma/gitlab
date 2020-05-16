@@ -16,9 +16,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private UserInformationMapper userMapper;
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    public DtoLoginInformation loadUserByUsername(String email) throws UsernameNotFoundException {
         //查数据库
          DtoLoginInformation dtoLoginInformation = userMapper.loadUserByEmail(email);
+         System.out.println("?:"+dtoLoginInformation.getId());
         return dtoLoginInformation;
     }
 }

@@ -24,6 +24,7 @@ public class JwtTokenUtil {
 
     private static final String CLAIM_KEY_USERNAME = "sub";
 
+    private static final String CLAIM_KEY_USER_ID = "uid";
     /**
      * 5天(毫秒)
      */
@@ -38,9 +39,10 @@ public class JwtTokenUtil {
     /**
      * 签发JWT
      */
-    public String generateToken(UserDetails userDetails) {
+    public String generateToken(DtoLoginInformation userDetails) {
         Map<String, Object> claims = new HashMap<>(16);
         claims.put( CLAIM_KEY_USERNAME, userDetails.getUsername() );
+        claims.put( CLAIM_KEY_USER_ID, userDetails.getId() );
         return Jwts.builder()
                 .setClaims( claims )
                 .setExpiration( new Date( Instant.now().toEpochMilli() + EXPIRATION_TIME  ) )
