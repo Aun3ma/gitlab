@@ -66,10 +66,10 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
 
-        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(35000)
-                .setConnectionRequestTimeout(35000).setSocketTimeout(60000).build();
-
-        httpPost.setConfig(requestConfig);
+//        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(35000)
+//                .setConnectionRequestTimeout(35000).setSocketTimeout(60000).build();
+//
+//        httpPost.setConfig(requestConfig);
 
         String fileContent = FileUtils.readFileToString(uploadFile, "utf-8");
 

@@ -6,6 +6,7 @@ import com.gitlab.projects.pojo.ProjectInformation;
 import com.gitlab.service.FileInformationService;
 import com.gitlab.service.ProjectInformationService;
 import com.gitlab.service.ProjectManagementService;
+import com.gitlab.tools.GetUUID;
 import entity.Result;
 import entity.StatusCode;
 import io.swagger.annotations.*;
@@ -37,7 +38,7 @@ public class ProjectManagementController {
     @Autowired
     private FileInformationService fileInformationService;
 
-    private int fileID = 1;
+    private String fileID;
 
     /***
      * 上传文件
@@ -54,8 +55,8 @@ public class ProjectManagementController {
         FileUtils.inputStreamToFile(inputStream, file);
 
         FileInformation fileInformation = projectManagementService.uploadFile(projectID, file);
-        fileInformation.setFileId(Integer.toString(fileID));
-        fileID++;
+        fileID = GetUUID.getUUID();
+        fileInformation.setFileId(fileID);
         fileInformationService.add(fileInformation);
 
         File del = new File(file.toURI());

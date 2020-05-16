@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aa.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/tools/GetUUID.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/ProjectManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/ProjectManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/FileInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/FileInformationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectManagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectManagementServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -158,10 +161,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ProjectsApplication" />
         <item itemvalue="Spring Boot.GatewayWebApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
         <item itemvalue="Spring Boot.UsersApplication" />
-        <item itemvalue="Spring Boot.ProjectsApplication" />
         <item itemvalue="JUnit.UserInformationController.getFormatDate" />
       </list>
     </recent_temporary>
@@ -174,12 +177,17 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8f1aa0c6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4e9a38d6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8f1aa0c6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@39d37f24" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4e9a38d6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@73093de7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4e9a38d6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4cf632c2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -220,7 +228,8 @@
       <workItem from="1589444986433" duration="2817000" />
       <workItem from="1589600731776" duration="7138000" />
       <workItem from="1589619788886" duration="6568000" />
-      <workItem from="1589635575462" duration="501000" />
+      <workItem from="1589635575462" duration="538000" />
+      <workItem from="1589648361616" duration="1625000" />
     </task>
     <task id="LOCAL-00001" summary="更新了网关、接口文档">
       <created>1588659710777</created>

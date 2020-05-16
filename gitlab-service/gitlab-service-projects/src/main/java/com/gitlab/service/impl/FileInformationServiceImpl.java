@@ -177,11 +177,6 @@ public class FileInformationServiceImpl implements FileInformationService {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(uri);
 
-        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(35000)
-                .setConnectionRequestTimeout(35000).setSocketTimeout(60000).build();
-
-        httpGet.setConfig(requestConfig);
-
         httpGet.addHeader("PRIVATE-TOKEN", privateToken);
         CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
         HttpEntity entity = httpResponse.getEntity();
@@ -215,11 +210,6 @@ public class FileInformationServiceImpl implements FileInformationService {
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpDeleteWithBody httpDeleteWithBody = new HttpDeleteWithBody(url);
-
-        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(35000)
-                .setConnectionRequestTimeout(35000).setSocketTimeout(60000).build();
-
-        httpDeleteWithBody.setConfig(requestConfig);
 
         net.minidev.json.JSONObject jsonObject = new net.minidev.json.JSONObject();
         jsonObject.appendField("branch", "master");
