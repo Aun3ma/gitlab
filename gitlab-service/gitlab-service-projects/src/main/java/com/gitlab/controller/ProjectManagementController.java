@@ -112,5 +112,17 @@ public class ProjectManagementController {
 
         return new Result(true, StatusCode.OK, "删除成功");
     }
+
+    /***
+     * 下载代码文件（测试用）
+     */
+    @ApiOperation(value = "下载代码文件", notes = "下载代码文件", tags = {"ProjectManagementController"})
+    @GetMapping(value = "/downloadFile/{fileID}")
+    public Result downloadFile(@PathVariable String fileID) throws Exception {
+        fileInformationService.downloadFile(fileID);
+
+
+        return new Result(true, StatusCode.OK, "下载成功");
+    }
 }
 

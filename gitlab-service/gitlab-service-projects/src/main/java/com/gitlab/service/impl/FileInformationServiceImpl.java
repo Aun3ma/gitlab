@@ -6,13 +6,16 @@ import com.github.pagehelper.PageInfo;
 import com.gitlab.dao.FileInformationMapper;
 import com.gitlab.projects.pojo.FileInformation;
 import com.gitlab.service.FileInformationService;
+import com.gitlab.tools.DecodeBase64;
 import com.gitlab.tools.HttpDeleteWithBody;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -23,7 +26,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 /****
  * @Author:shenjunjie
@@ -91,7 +97,7 @@ public class FileInformationServiceImpl implements FileInformationService {
         Example example = new Example(FileInformation.class);
         Example.Criteria criteria = example.createCriteria();
         if(fileInformation != null) {
-            // write it yourself
+            criteria.andEqualTo("taskId", fileInformation.getTaskId());
         }
         return example;
     }
@@ -159,8 +165,38 @@ public class FileInformationServiceImpl implements FileInformationService {
      * 下载代码文件
      */
     @Override
-    public boolean downloadFile(String fileID) {
+    public boolean downloadFile(String fileID) throws Exception {
+        FileInformation fileInformation = findById(fileID);
 
+        String privateToken = "76hSmH3ihw9f_29SadRS";
+        String url = "http://111.231.248.99:81/api/v4/projects/" +
+                fileInformation.getTaskId() + "/repository/files/" + fileInformation.getFilePath();
+
+        URI uri = new URIBuilder(url).setParameter("ref", "master").build();
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet(uri);
+
+        RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(35000)
+                .setConnectionRequestTimeout(35000).setSocketTimeout(60000).build();
+
+        httpGet.setConfig(requestConfig);
+
+        httpGet.addHeader("PRIVATE-TOKEN", privateToken);
+        CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
+        HttpEntity entity = httpResponse.getEntity();
+
+        String message = EntityUtils.toString(entity);
+        System.out.println(message);
+
+        JSONObject response = JSONObject.parseObject(message);
+        String Base64Code = response.getString("content");
+        String fileName = response.getString("file_name");
+
+        DecodeBase64.decoderBase64File(Base64Code, fileName);
+
+        File del = new File(fileName);
+        del.delete();
 
         return true;
     }

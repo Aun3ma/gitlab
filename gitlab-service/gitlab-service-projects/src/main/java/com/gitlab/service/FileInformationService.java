@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.gitlab.projects.pojo.FileInformation;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 /****
  * @Author:shenjunjie
@@ -75,7 +76,7 @@ public interface FileInformationService {
     /***
      * 下载代码文件
      */
-    boolean downloadFile(String fileID);
+    boolean downloadFile(String fileID) throws Exception;
 
     /***
      * 删除代码文件
