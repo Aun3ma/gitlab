@@ -25,10 +25,10 @@ public interface ProjectManagementService {
     /***
      * 新建仓库
      */
-    ProjectInformation createRepo(String userID, String projectName, String description) throws IOException, JSONException;
+    ProjectInformation createRepo(String userID, String projectName, String description, String visibility) throws IOException, JSONException;
 
     /***
      * 编辑仓库信息
      */
-    ProjectInformation changeRepoInfo(String userID, String projectID, String newProjectName, String newDescription) throws IOException;
+    ProjectInformation changeRepoInfo(String userID, String projectID, String newProjectName, String newDescription, String visibility) throws IOException;
 }

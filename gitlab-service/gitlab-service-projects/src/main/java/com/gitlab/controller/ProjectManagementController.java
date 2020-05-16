@@ -80,11 +80,11 @@ public class ProjectManagementController {
      * 新建仓库实现
      */
     @ApiOperation(value = "新建用户仓库", notes = "向ProjectInformation插入一条新数据", tags = {"ProjectManagementController"})
-    @PostMapping(value = "/createRepo/{userID}/{projectName}/{description}")
+    @PostMapping(value = "/createRepo/{userID}/{projectName}/{description}/{visibility}")
     public Result createRepo(@PathVariable String userID, @PathVariable String projectName,
-                             @PathVariable String description) throws IOException, JSONException {
+                             @PathVariable String description, @PathVariable String visibility) throws IOException, JSONException {
 
-        ProjectInformation projectInformation = projectManagementService.createRepo(userID, projectName, description);
+        ProjectInformation projectInformation = projectManagementService.createRepo(userID, projectName, description, visibility);
         projectInformationService.add(projectInformation);
         return new Result(true, StatusCode.OK, "新建成功");
     }
@@ -93,11 +93,11 @@ public class ProjectManagementController {
      * 修改仓库信息
      */
     @ApiOperation(value = "修改仓库信息", notes = "修改ProjectInformation中的一条数据", tags = {"ProjectManagementController"})
-    @PutMapping(value = "/changeRepo/{userID}/{projectID}/{newProjectName}/{newDescription}")
+    @PutMapping(value = "/changeRepo/{userID}/{projectID}/{newProjectName}/{newDescription}/{newVisibility}")
     public Result changeRepoInfo(@PathVariable String userID, @PathVariable String projectID,
-                                  @PathVariable String newProjectName, @PathVariable String newDescription) throws IOException {
+                                 @PathVariable String newProjectName, @PathVariable String newDescription, @PathVariable String newVisibility) throws IOException {
         ProjectInformation projectInformation =
-                projectManagementService.changeRepoInfo(userID, projectID, newProjectName, newDescription);
+                projectManagementService.changeRepoInfo(userID, projectID, newProjectName, newDescription, newVisibility);
         projectInformationService.update(projectInformation);
         return new Result(true, StatusCode.OK, "修改成功");
     }

@@ -129,7 +129,8 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
      *
      */
     @Override
-    public ProjectInformation createRepo(String userID, String projectName, String description) throws IOException, JSONException {
+    public ProjectInformation createRepo(
+            String userID, String projectName, String description, String visibility) throws IOException, JSONException {
         String privateToken = "76hSmH3ihw9f_29SadRS";
         String url = "http://111.231.248.99:81/api/v4/projects";
 
@@ -138,6 +139,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
         formparams.add(new BasicNameValuePair("name", projectName));
         formparams.add(new BasicNameValuePair("path", projectName));
         formparams.add(new BasicNameValuePair("description", description));
+        formparams.add(new BasicNameValuePair("visibility", visibility));
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
@@ -162,6 +164,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
         projectInformation.setOwnerUserId(userID);
         projectInformation.setProjName(projectName);
         projectInformation.setUpdateTime(createTime);
+        projectInformation.setVisibility(visibility);
 
         return projectInformation;
     }
@@ -171,7 +174,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
      */
     @Override
     public ProjectInformation changeRepoInfo(
-            String userID, String projectID, String newProjectName, String newDescription) throws IOException {
+            String userID, String projectID, String newProjectName, String newDescription, String visibility) throws IOException {
         String privateToken = "76hSmH3ihw9f_29SadRS";
         String url = "http://111.231.248.99:81/api/v4/projects/" + projectID;
 
@@ -179,6 +182,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
         formparams.add(new BasicNameValuePair("private_token", privateToken));
         formparams.add(new BasicNameValuePair("name", newProjectName));
         formparams.add(new BasicNameValuePair("description", newDescription));
+        formparams.add(new BasicNameValuePair("visibility", visibility));
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPut httpPut = new HttpPut(url);
@@ -203,6 +207,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
         projectInformation.setOwnerUserId(userID);
         projectInformation.setProjName(newProjectName);
         projectInformation.setUpdateTime(updateTime);
+        projectInformation.setVisibility(visibility);
 
         return projectInformation;
     }
