@@ -19,7 +19,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public DtoLoginInformation loadUserByUsername(String email) throws UsernameNotFoundException {
         //查数据库
          DtoLoginInformation dtoLoginInformation = userMapper.loadUserByEmail(email);
-         System.out.println("?:"+dtoLoginInformation.getId());
         return dtoLoginInformation;
     }
 }
