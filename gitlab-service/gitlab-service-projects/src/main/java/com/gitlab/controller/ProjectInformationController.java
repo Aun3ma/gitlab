@@ -1,7 +1,9 @@
 package com.gitlab.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.gitlab.projects.pojo.FileInformation;
 import com.gitlab.projects.pojo.ProjectInformation;
+import com.gitlab.service.FileInformationService;
 import com.gitlab.service.ProjectInformationService;
 import entity.Result;
 import entity.StatusCode;
@@ -26,6 +28,8 @@ public class ProjectInformationController {
 
     @Autowired
     private ProjectInformationService projectInformationService;
+    @Autowired
+    private FileInformationService fileInformationService;
 
     /***
      * ProjectInformation分页条件搜索实现
@@ -145,5 +149,25 @@ public class ProjectInformationController {
         //调用ProjectInformationService实现查询所有ProjectInformation
         List<ProjectInformation> list = projectInformationService.findAll();
         return new Result<List<ProjectInformation>>(true, StatusCode.OK,"查询成功",list) ;
+    }
+
+    /***
+     * 获取一个用户的所有项目仓库
+     */
+    @ApiOperation(value = "查询一个用户的所有ProjectInformation",notes = "查询一个用户的所有ProjectInformation方法详情",tags = {"ProjectInformationController"})
+    @GetMapping("/getUserRepos/{userID}")
+    public Result<List<ProjectInformation>> findUserRepo(@PathVariable String userID) {
+        List<ProjectInformation> list = projectInformationService.findByUserID(userID);
+        return  new Result<List<ProjectInformation>>(true, StatusCode.OK, "查询成功", list);
+    }
+
+    /***
+     * 获取一个项目仓库的所有代码文件
+     */
+    @ApiOperation(value = "查询一个项目仓库的所有FileInformation",notes = "查询一个项目仓库的所有FileInformation方法详情",tags = {"ProjectInformationController"})
+    @GetMapping("/getRepoFiles/{projectID}")
+    public Result<List<FileInformation>> findRepoFile(@PathVariable String projectID) {
+        List<FileInformation> list = fileInformationService.findByProjectID(projectID);
+        return  new Result<List<FileInformation>>(true, StatusCode.OK, "查询成功", list);
     }
 }

@@ -67,4 +67,9 @@ public interface ProjectInformationService {
      * @return
      */
     List<ProjectInformation> findAll();
+
+    /***
+     *获取一个用户的所有项目仓库
+     */
+    List<ProjectInformation> findByUserID(String userID);
 }

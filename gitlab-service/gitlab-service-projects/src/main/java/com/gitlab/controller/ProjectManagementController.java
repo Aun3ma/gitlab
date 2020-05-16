@@ -1,7 +1,9 @@
 package com.gitlab.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.gitlab.projects.pojo.FileInformation;
 import com.gitlab.projects.pojo.ProjectInformation;
+import com.gitlab.service.FileInformationService;
 import com.gitlab.service.ProjectInformationService;
 import com.gitlab.service.ProjectManagementService;
 import entity.Result;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import com.gitlab.tools.FileUtils;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +26,7 @@ import java.util.List;
 
 @Api(value = "ProjectManagementController")
 @RestController
-@RequestMapping("/projects/projectManagement")
+@RequestMapping("/projects/projectInformation")
 @CrossOrigin
 public class ProjectManagementController {
 
@@ -31,31 +34,29 @@ public class ProjectManagementController {
     private ProjectManagementService projectManagementService;
     @Autowired
     private ProjectInformationService projectInformationService;
+    @Autowired
+    private FileInformationService fileInformationService;
+
+    private int fileID = 1;
 
     /***
      * 上传文件
      */
     @ApiOperation(value = "上传文件", notes = "将代码文件上传到gitlab仓库", tags = {"ProjectManagementController"})
-    @PostMapping(value = "/{projectID}/upload")
+    @PostMapping(value = "/upload/{projectID}")
     public Result uploadFile(@PathVariable String projectID, @RequestParam MultipartFile uploadFile) throws IOException {
 
-        String extendName = StringUtils.getFilenameExtension(uploadFile.getOriginalFilename());
-
-        String name = "xxx." + extendName;
+        //String extendName = StringUtils.getFilenameExtension(uploadFile.getOriginalFilename());
+        String name = uploadFile.getOriginalFilename();
         File file;
         InputStream inputStream = uploadFile.getInputStream();
         file = new File(name);
         FileUtils.inputStreamToFile(inputStream, file);
 
-//        String fileName = StringUtils.getFilenameExtension(uploadFile.getOriginalFilename());
-//
-//        File file = new File("xxx." + fileName);
-//        if (!file.exists()){
-//            file.createNewFile();
-//        }
-//        uploadFile.transferTo(file);
-
-        projectManagementService.uploadFile(projectID, file);
+        FileInformation fileInformation = projectManagementService.uploadFile(projectID, file);
+        fileInformation.setFileId(Integer.toString(fileID));
+        fileID++;
+        fileInformationService.add(fileInformation);
 
         File del = new File(file.toURI());
         del.delete();
@@ -66,8 +67,8 @@ public class ProjectManagementController {
     /***
      * 删除仓库实现
      */
-    @ApiOperation(value = "删除用户仓库", notes = "从ProjectInformation中删除若干条数据", tags = {"ProjectInformationController"})
-    @DeleteMapping(value = "/{projectID}")
+    @ApiOperation(value = "删除用户仓库", notes = "从ProjectInformation中删除若干条数据", tags = {"ProjectManagementController"})
+    @DeleteMapping(value = "/deleteRepo/{projectID}")
     public Result deleteRepo(@PathVariable String projectID) throws IOException {
 
         projectManagementService.deleteRepo(projectID);
@@ -78,14 +79,38 @@ public class ProjectManagementController {
     /***
      * 新建仓库实现
      */
-    @ApiOperation(value = "新建用户仓库", notes = "向ProjectInformation插入一条新数据", tags = {"ProjectInformationController"})
-    @PostMapping(value = "/{userID}/{projectName}/{description}")
+    @ApiOperation(value = "新建用户仓库", notes = "向ProjectInformation插入一条新数据", tags = {"ProjectManagementController"})
+    @PostMapping(value = "/createRepo/{userID}/{projectName}/{description}")
     public Result createRepo(@PathVariable String userID, @PathVariable String projectName,
                              @PathVariable String description) throws IOException, JSONException {
 
         ProjectInformation projectInformation = projectManagementService.createRepo(userID, projectName, description);
         projectInformationService.add(projectInformation);
         return new Result(true, StatusCode.OK, "新建成功");
+    }
+
+    /***
+     * 修改仓库信息
+     */
+    @ApiOperation(value = "修改仓库信息", notes = "修改ProjectInformation中的一条数据", tags = {"ProjectManagementController"})
+    @PutMapping(value = "/changeRepo/{userID}/{projectID}/{newProjectName}/{newDescription}")
+    public Result changeRepoInfo(@PathVariable String userID, @PathVariable String projectID,
+                                  @PathVariable String newProjectName, @PathVariable String newDescription) throws IOException {
+        ProjectInformation projectInformation =
+                projectManagementService.changeRepoInfo(userID, projectID, newProjectName, newDescription);
+        projectInformationService.update(projectInformation);
+        return new Result(true, StatusCode.OK, "修改成功");
+    }
+
+    /***
+     * 删除代码文件
+     */
+    @ApiOperation(value = "删除代码文件", notes = "删除FileInformation中的一条数据", tags = {"ProjectManagementController"})
+    @DeleteMapping(value = "/deleteFile/{fileID}")
+    public Result deleteFile(@PathVariable String fileID) throws IOException {
+        fileInformationService.deleteFile(fileID);
+
+        return new Result(true, StatusCode.OK, "删除成功");
     }
 }
 

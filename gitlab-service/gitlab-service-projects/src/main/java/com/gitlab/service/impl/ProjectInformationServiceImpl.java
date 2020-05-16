@@ -102,7 +102,7 @@ public class ProjectInformationServiceImpl implements ProjectInformationService 
         Example example = new Example(ProjectInformation.class);
         Example.Criteria criteria = example.createCriteria();
         if(projectInformation != null) {
-            // write it yourself
+            criteria.andEqualTo("ownerUserId", projectInformation.getOwnerUserId());
         }
         return example;
     }
@@ -151,5 +151,15 @@ public class ProjectInformationServiceImpl implements ProjectInformationService 
     @Override
     public List<ProjectInformation> findAll() {
         return projectInformationMapper.selectAll();
+    }
+
+    /***
+     *获取一个用户的所有项目仓库
+     */
+    @Override
+    public List<ProjectInformation> findByUserID(String userID){
+        ProjectInformation projectInformation = new ProjectInformation();
+        projectInformation.setOwnerUserId(userID);
+        return findList(projectInformation);
     }
 }
