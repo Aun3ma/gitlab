@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/controller/ProjectManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/controller/ProjectManagementController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/FileInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/FileInformationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/FileInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/FileInformationServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_sdp/TreeLSTM" beforeDir="false" afterPath="$PROJECT_DIR$/my_sdp/TreeLSTM" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_sdp/my_code2vec" beforeDir="false" afterPath="$PROJECT_DIR$/my_sdp/my_code2vec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_sdp/my_code2vec/data/my_dataset/my_dataset.pred.c2v" beforeDir="false" afterPath="$PROJECT_DIR$/my_sdp/my_code2vec/data/my_dataset/my_dataset.pred.c2v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_sdp/my_code2vec/my_dataset.pred.raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my_sdp/my_code2vec/my_dataset.pred.raw.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,11 +138,11 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.UserInformationController.getFormatDate" />
       <item itemvalue="Spring Boot.EurekaApplication" />
       <item itemvalue="Spring Boot.ProjectsApplication" />
       <item itemvalue="Spring Boot.UsersApplication" />
       <item itemvalue="Spring Boot.GatewayWebApplication" />
-      <item itemvalue="JUnit.UserInformationController.getFormatDate" />
     </list>
     <recent_temporary>
       <list>
@@ -173,7 +167,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -302,7 +296,8 @@
     <MESSAGE value="把projects 的请求路径改了一下 变为 9001/api/projects/**" />
     <MESSAGE value="让token携带 user_id key为 uid" />
     <MESSAGE value="更新了 软件测试模块（在python文件中需要调整路径）" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了 软件测试模块（在python文件中需要调整路径）" />
+    <MESSAGE value="更新了 软件测试模块 中的条件查询 可以通过task_id 查询error_line 和module（module中file_id就是task_id）中的预测结果  可以通过user_id查询task" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了 软件测试模块 中的条件查询 可以通过task_id 查询error_line 和module（module中file_id就是task_id）中的预测结果  可以通过user_id查询task" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Inspections" timestamp="1589847763823">
@@ -333,64 +328,70 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589787883140" />
-    <state width="1024" height="241" key="GridCell.Tab.0.bottom" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.0.bottom" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.0.center" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.0.center" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.0.left" timestamp="1589881748829">
+    <state width="1024" height="188" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.0.left" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589881748829" />
-    <state width="1024" height="241" key="GridCell.Tab.0.right" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.0.right" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.1.bottom" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.1.bottom" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.1.center" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.1.center" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.1.left" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.1.left" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.1.right" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.1.right" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.2.bottom" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.2.bottom" timestamp="1589885734981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.2.center" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589885734981" />
+    <state width="1024" height="188" key="GridCell.Tab.2.center" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.2.left" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.2.left" timestamp="1589885734980">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
-    <state width="1024" height="241" key="GridCell.Tab.2.right" timestamp="1589881748830">
+    <state width="1024" height="188" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1589885734980" />
+    <state width="1024" height="188" key="GridCell.Tab.2.right" timestamp="1589885734981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="241" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1589881748830" />
+    <state width="1024" height="188" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1589885734981" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1589714794618" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1589714794618" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1589714794618" />
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1589714794618" />
-    <state x="477" y="128" key="MultipleFileMergeDialog" timestamp="1589881432679">
+    <state x="147" y="65" key="MergeDialog" timestamp="1589885512020">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="477" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1589881432679" />
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1589885512020" />
+    <state x="477" y="128" key="MultipleFileMergeDialog" timestamp="1589885522998">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="477" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1589885522998" />
     <state x="270" y="54" key="SettingsEditor" timestamp="1589714794618" />
     <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589714794618" />
+    <state x="461" y="171" key="Vcs.Multiple.Commit.Info.Dialog.Key" timestamp="1589885511212">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="461" y="171" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.824@0.0.1536.824" timestamp="1589885511212" />
     <state x="366" y="118" key="Vcs.Push.Dialog.v2" timestamp="1589880947225">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
