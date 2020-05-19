@@ -1,13 +1,25 @@
 package com.gitlab.service.impl;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.gitlab.dao.CodeQualityEvaluationMapper;
 import com.gitlab.dao.FileInformationMapper;
+import com.gitlab.projects.pojo.CodeQualityEvaluation;
+import com.gitlab.projects.pojo.ErrorLine;
 import com.gitlab.projects.pojo.FileInformation;
+import com.gitlab.projects.pojo.ModuleInformation;
+import com.gitlab.service.CodeQualityEvaluationService;
+import com.gitlab.service.ErrorLineService;
 import com.gitlab.service.FileInformationService;
+import com.gitlab.service.ModuleInformationService;
 import com.gitlab.tools.DecodeBase64;
 import com.gitlab.tools.HttpDeleteWithBody;
+import com.mysql.cj.x.protobuf.MysqlxExpr;
+import entity.IdWorker;
+import entity.LogicPositivizer;
+import entity.Method;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;
@@ -21,16 +33,19 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.tomcat.jni.FileInfo;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 /****
  * @Author:shenjunjie
  * @Description:FileInformation业务层接口实现类
@@ -41,7 +56,6 @@ public class FileInformationServiceImpl implements FileInformationService {
 
     @Autowired
     private FileInformationMapper fileInformationMapper;
-
 
     /**
      * FileInformation条件+分页查询
@@ -162,10 +176,10 @@ public class FileInformationServiceImpl implements FileInformationService {
     }
 
     /***
-     * 下载代码文件
+     * 下载代码文件 0de3cd52b3f44a758336b262a39e6f29
      */
     @Override
-    public boolean downloadFile(String fileID) throws Exception {
+    public String downloadFile(String fileID) throws Exception {
         FileInformation fileInformation = findById(fileID);
 
         String privateToken = "76hSmH3ihw9f_29SadRS";
@@ -182,7 +196,6 @@ public class FileInformationServiceImpl implements FileInformationService {
         HttpEntity entity = httpResponse.getEntity();
 
         String message = EntityUtils.toString(entity);
-        System.out.println(message);
 
         JSONObject response = JSONObject.parseObject(message);
         String Base64Code = response.getString("content");
@@ -190,10 +203,10 @@ public class FileInformationServiceImpl implements FileInformationService {
 
         DecodeBase64.decoderBase64File(Base64Code, fileName);
 
-        File del = new File(fileName);
-        del.delete();
+//        File del = new File(fileName);
+//        del.delete();
 
-        return true;
+        return fileName;
     }
 
     /***
@@ -234,4 +247,83 @@ public class FileInformationServiceImpl implements FileInformationService {
 
         return true;
     }
+
+    /***
+     * 代码缺陷检查方法
+     */
+    @Override
+    public List<Method> checkFile(String fileID , String userID , String filename) throws Exception{
+
+        File file = new File(filename);
+        String str="";
+        try {
+            FileInputStream in=new FileInputStream(file);
+            int size=in.available();
+            byte[] buffer=new byte[size];
+            in.read(buffer);
+            in.close();
+            str=new String(buffer,"GB2312");
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        Map<String, Object> res = LogicPositivizer.parser(str);
+        if(res == null){
+            return null;
+        }
+        List<Method> methods = (List<Method>) res.get("methods");
+        for(int i=0;i < methods.size();i++){
+            try{
+//                File MethodFile = new File("E:\\学校\\大三下\\软件测试项目\\myproject\\gitlab\\my_sdp\\my_pred_dir\\"+i+".java");
+                File MethodFile = new File("my_sdp"+ File.separator +"my_pred_dir"+ File.separator+i+".java");
+                if(!file.exists()){
+                    MethodFile.createNewFile();
+                }
+
+                FileWriter fileWriter = new FileWriter("my_sdp"+ File.separator +"my_pred_dir"+ File.separator+i+".java");
+
+
+                fileWriter.write(LogicPositivizer.getMethodBody(methods.get(i),str));
+
+                fileWriter.close();
+
+            }catch(IOException e){
+
+                e.printStackTrace();
+                return null;
+            }
+
+        }
+        return methods;
+
+    }
+
+    @Override
+    public JSONObject runPython(){
+        System.out.println("写入文件结束，开始运行python");
+        List<String> CodeJson = new ArrayList<>();
+        Process proc;
+        try {
+//            proc = Runtime.getRuntime().exec("python E:\\学校\\大三下\\软件测试项目\\myproject\\gitlab\\my_sdp\\defect_prediction.py");
+            proc = Runtime.getRuntime().exec("python my_sdp"+File.separator+"defect_prediction.py");
+            BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+            String line = null;
+            while ((line = in.readLine()) != null) {
+                CodeJson.add(line);
+            }
+            in.close();
+            proc.waitFor();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            return null;
+        }
+        System.out.println("python运行结束，取得测试码"+CodeJson.get(CodeJson.size()-1));
+
+        JSONObject jsonObject = JSONObject.parseObject(CodeJson.get(CodeJson.size()-1));
+        return jsonObject;
+    }
+
 }

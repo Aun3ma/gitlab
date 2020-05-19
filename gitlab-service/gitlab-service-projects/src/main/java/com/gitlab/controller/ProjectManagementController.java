@@ -1,12 +1,13 @@
 package com.gitlab.controller;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
-import com.gitlab.projects.pojo.FileInformation;
-import com.gitlab.projects.pojo.ProjectInformation;
-import com.gitlab.service.FileInformationService;
-import com.gitlab.service.ProjectInformationService;
-import com.gitlab.service.ProjectManagementService;
+import com.gitlab.projects.pojo.*;
+import com.gitlab.service.*;
 import com.gitlab.tools.GetUUID;
+import entity.IdWorker;
+import entity.Method;
 import entity.Result;
 import entity.StatusCode;
 import io.swagger.annotations.*;
@@ -37,6 +38,13 @@ public class ProjectManagementController {
     private ProjectInformationService projectInformationService;
     @Autowired
     private FileInformationService fileInformationService;
+    @Autowired
+    private CodeQualityEvaluationService codeQualityEvaluationService;
+    @Autowired
+    private ErrorLineService errorLineService;
+    @Autowired
+    private ModuleInformationService moduleInformationService;
+
 
     private String fileID;
 
@@ -117,7 +125,7 @@ public class ProjectManagementController {
     /***
      * 下载代码文件（测试用）
      */
-    @ApiOperation(value = "下载代码文件", notes = "下载代码文件", tags = {"ProjectManagementController"})
+    @ApiOperation(value = "下载代码文件（测试用）", notes = "下载代码文件", tags = {"ProjectManagementController"})
     @GetMapping(value = "/downloadFile/{fileID}")
     public Result downloadFile(@PathVariable String fileID) throws Exception {
         fileInformationService.downloadFile(fileID);
@@ -125,5 +133,94 @@ public class ProjectManagementController {
 
         return new Result(true, StatusCode.OK, "下载成功");
     }
+
+    /***
+     * 测试代码 6d1d356a26c144f3912301f9074a9d6a  1257931343392669696
+     */
+    @ApiOperation(value = "测试代码文件", notes = "测试代码文件", tags = {"ProjectManagementController"})
+    @GetMapping(value = "/checkFile/{fileID}/{userID}")
+    public Result checkFile(@PathVariable String fileID , @PathVariable String userID) throws Exception {
+        System.out.println("测试开始：");
+        //下载文件到本地
+        String filename = fileInformationService.downloadFile(fileID);
+        if(filename == null){
+            return new Result(true, StatusCode.ERROR, "下载文件失败");
+        }
+        System.out.println("下载文件"+filename);
+
+        //讲代码转为方法文件
+        List<Method> methods = fileInformationService.checkFile(fileID , userID , filename);
+        if(methods == null){
+            File del = new File(filename);
+            del.delete();
+            return new Result(true, StatusCode.ERROR, "转换失败");
+        }
+
+        //运行方法获取预测结果
+        JSONObject jsonObject = fileInformationService.runPython();
+        if(jsonObject == null){
+            File del = new File(filename);
+            del.delete();
+            File del1 = new File("my_sdp" + File.separator+"my_pred_dir");
+            File[] files = del1.listFiles();
+            for (File f : files) {
+                f.delete();
+            }
+            return new Result(true, StatusCode.ERROR, "运行预测失败");
+        }
+
+        //建立任务
+        CodeQualityEvaluation codeQualityEvaluation = new CodeQualityEvaluation();
+        IdWorker idWorker = new IdWorker(0,0);
+        long task_id = idWorker.nextId();
+        codeQualityEvaluation.setTaskId(Long.toString(task_id));
+        codeQualityEvaluation.setPorjVersion("1.0");
+        codeQualityEvaluation.setProjBranch("master");
+        codeQualityEvaluation.setStartTime(idWorker.getFormatDate());
+        codeQualityEvaluation.setProjId(fileID);
+        codeQualityEvaluation.setUserId(userID);
+        codeQualityEvaluation.setTaskState(2);
+        codeQualityEvaluationService.add(codeQualityEvaluation);
+
+        //把方法添加到方法数据库中
+        for(int i=0 ; i<methods.size() ; i++){
+            ModuleInformation moduleInformation = new ModuleInformation();
+            Long module_id = idWorker.nextId();
+            moduleInformation.setModuleId(Long.toString(module_id));
+            moduleInformation.setFileId(fileID);
+            moduleInformation.setModuleName(methods.get(i).getMethodName());
+            moduleInformation.setPmdUrl("unknown");
+            moduleInformation.setMlPredictedResult(jsonObject.getJSONArray("lstm_pred").get(i).toString());
+            moduleInformationService.add(moduleInformation);
+        }
+
+        //把需要注意的行添加到数据库中
+        JSONArray jsonArray = jsonObject.getJSONArray("topk_list");
+        for(int i=0 ; i<methods.size() ; i++){
+            int begin_line = methods.get(i).getBeginLine();
+            for(int j=0 ; j<jsonArray.getJSONArray(i).size();j++){
+                if(jsonArray.getJSONArray(i).getInteger(j).equals(0)){
+                    continue;
+                }
+                ErrorLine errorLine = new ErrorLine();
+                errorLine.setTaskId(Long.toString(task_id));
+                errorLine.setFileId(fileID);
+                int line_num = jsonArray.getJSONArray(i).getInteger(j) + begin_line -1;
+                errorLine.setErrorLine(line_num);
+                errorLineService.add(errorLine);
+            }
+        }
+
+        File del = new File(filename);
+        del.delete();
+        File del1 = new File("my_sdp" + File.separator+"my_pred_dir");
+        File[] files = del1.listFiles();
+        for (File f : files) {
+            f.delete();
+        }
+        return new Result(true, StatusCode.OK, "测试成功" , task_id);
+    }
+
+
 }
 

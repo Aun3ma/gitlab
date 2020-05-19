@@ -3,6 +3,8 @@ package entity;
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * <p>名称：IdWorker.java</p>
@@ -159,6 +161,12 @@ public class IdWorker {
         return id;
     }
 
+    public Date getFormatDate(){
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = formatter.format(date);
+        return java.sql.Date.valueOf(dateString);
+    }
 
     public static void main(String[] args) {
         //推特  26万个不重复的ID

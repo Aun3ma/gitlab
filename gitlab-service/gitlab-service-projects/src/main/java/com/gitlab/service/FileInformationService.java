@@ -1,7 +1,9 @@
 package com.gitlab.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
 import com.gitlab.projects.pojo.FileInformation;
+import entity.Method;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -76,10 +78,22 @@ public interface FileInformationService {
     /***
      * 下载代码文件
      */
-    boolean downloadFile(String fileID) throws Exception;
+    String downloadFile(String fileID) throws Exception;
 
     /***
      * 删除代码文件
      */
     boolean deleteFile(String fileID) throws IOException;
+
+    /***
+     * 代码缺陷检查方法
+     */
+    List<Method> checkFile(String fileID , String userID , String filename) throws Exception;
+
+    /***
+     * 运行python方法
+     */
+    JSONObject runPython();
+
+
 }
