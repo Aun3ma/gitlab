@@ -76,7 +76,7 @@ public class CodeQualityEvaluationServiceImpl implements CodeQualityEvaluationSe
         Example example = new Example(CodeQualityEvaluation.class);
         Example.Criteria criteria = example.createCriteria();
         if(codeQualityEvaluation != null) {
-            // write it yourself
+            criteria.andEqualTo("userId",codeQualityEvaluation.getUserId());
         }
         return example;
     }

@@ -76,7 +76,7 @@ public class ModuleInformationServiceImpl implements ModuleInformationService {
         Example example = new Example(ModuleInformation.class);
         Example.Criteria criteria = example.createCriteria();
         if(moduleInformation != null) {
-            // write it yourself
+            criteria.andEqualTo("fileId",moduleInformation.getFileId());
         }
         return example;
     }

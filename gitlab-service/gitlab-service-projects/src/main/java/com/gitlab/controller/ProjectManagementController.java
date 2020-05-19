@@ -173,6 +173,7 @@ public class ProjectManagementController {
         CodeQualityEvaluation codeQualityEvaluation = new CodeQualityEvaluation();
         IdWorker idWorker = new IdWorker(0,0);
         long task_id = idWorker.nextId();
+        System.out.println(task_id);
         codeQualityEvaluation.setTaskId(Long.toString(task_id));
         codeQualityEvaluation.setPorjVersion("1.0");
         codeQualityEvaluation.setProjBranch("master");
@@ -187,7 +188,7 @@ public class ProjectManagementController {
             ModuleInformation moduleInformation = new ModuleInformation();
             Long module_id = idWorker.nextId();
             moduleInformation.setModuleId(Long.toString(module_id));
-            moduleInformation.setFileId(fileID);
+            moduleInformation.setFileId(Long.toString(task_id));
             moduleInformation.setModuleName(methods.get(i).getMethodName());
             moduleInformation.setPmdUrl("unknown");
             moduleInformation.setMlPredictedResult(jsonObject.getJSONArray("lstm_pred").get(i).toString());
@@ -218,7 +219,7 @@ public class ProjectManagementController {
         for (File f : files) {
             f.delete();
         }
-        return new Result(true, StatusCode.OK, "测试成功" , task_id);
+        return new Result(true, StatusCode.OK, "测试成功" , Long.toString(task_id));
     }
 
 
