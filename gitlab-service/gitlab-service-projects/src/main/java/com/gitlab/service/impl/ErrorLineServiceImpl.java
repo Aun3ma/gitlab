@@ -76,7 +76,7 @@ public class ErrorLineServiceImpl implements ErrorLineService {
         Example example = new Example(ErrorLine.class);
         Example.Criteria criteria = example.createCriteria();
         if(errorLine != null) {
-            // write it yourself
+            criteria.andEqualTo("taskId",errorLine.getTaskId());
         }
         return example;
     }
