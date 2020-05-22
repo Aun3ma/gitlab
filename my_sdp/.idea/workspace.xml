@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fd83c48-2b2b-4606-a27d-14afb9966a54" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_alibaba_druid_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-common-db/gitlab-common-db.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-common-db/gitlab-common-db.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-common-db/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-common-db/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/FileInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/FileInformationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/FileInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/FileInformationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-users/gitlab-service-users.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-users/gitlab-service-users.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service-users/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service-users/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gitlab-service/gitlab-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../gitlab-service/gitlab-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +36,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/my_code2vec" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1c4MNWkX1vDh8Vo44SEfOm7LJtK" />
@@ -89,6 +108,8 @@
       <workItem from="1589847919753" duration="2604000" />
       <workItem from="1589878913843" duration="963000" />
       <workItem from="1589882078580" duration="131000" />
+      <workItem from="1589969002409" duration="88000" />
+      <workItem from="1590048655310" duration="470000" />
     </task>
     <servers />
   </component>
@@ -96,6 +117,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="367" y="0" key="CommitChangelistDialog2" timestamp="1589969073120">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="367" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589969073120" />
     <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1589802428183">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

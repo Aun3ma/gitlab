@@ -161,7 +161,7 @@ public class ProjectManagementController {
         if(jsonObject == null){
             File del = new File(filename);
             del.delete();
-            File del1 = new File("my_sdp" + File.separator+"my_pred_dir");
+            File del1 = new File("/root/project/my_sdp/my_pred_dir");
             File[] files = del1.listFiles();
             for (File f : files) {
                 f.delete();
@@ -214,7 +214,7 @@ public class ProjectManagementController {
 
         File del = new File(filename);
         del.delete();
-        File del1 = new File("my_sdp" + File.separator+"my_pred_dir");
+        File del1 = new File("/root/project/my_sdp/my_pred_dir");
         File[] files = del1.listFiles();
         for (File f : files) {
             f.delete();
