@@ -275,12 +275,12 @@ public class FileInformationServiceImpl implements FileInformationService {
         for(int i=0;i < methods.size();i++){
             try{
 //                File MethodFile = new File("E:\\学校\\大三下\\软件测试项目\\myproject\\gitlab\\my_sdp\\my_pred_dir\\"+i+".java");
-                File MethodFile = new File("my_sdp"+ File.separator +"my_pred_dir"+ File.separator+i+".java");
+                File MethodFile = new File("/root/project/my_sdp/my_pred_dir/"+i+".java");
                 if(!file.exists()){
                     MethodFile.createNewFile();
                 }
 
-                FileWriter fileWriter = new FileWriter("my_sdp"+ File.separator +"my_pred_dir"+ File.separator+i+".java");
+                FileWriter fileWriter = new FileWriter("/root/project/my_sdp/my_pred_dir/"+i+".java");
 
 
                 fileWriter.write(LogicPositivizer.getMethodBody(methods.get(i),str));
@@ -305,7 +305,8 @@ public class FileInformationServiceImpl implements FileInformationService {
         Process proc;
         try {
 //            proc = Runtime.getRuntime().exec("python E:\\学校\\大三下\\软件测试项目\\myproject\\gitlab\\my_sdp\\defect_prediction.py");
-            proc = Runtime.getRuntime().exec("python my_sdp"+File.separator+"defect_prediction.py");
+//            proc = Runtime.getRuntime().exec("python my_sdp"+File.separator+"defect_prediction.py");
+            proc = Runtime.getRuntime().exec("python /root/project/my_sdp/defect_prediction.py");
             BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
             String line = null;
             while ((line = in.readLine()) != null) {

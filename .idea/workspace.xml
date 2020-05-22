@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="">
+    <list default="true" id="7f05b08f-cbb6-4c30-863e-ab5b44dcb657" name="Default Changelist" comment="更新了 软件测试模块（在python文件中需要调整路径）">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-common-db/gitlab-common-db.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common-db/gitlab-common-db.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-common-db/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common-db/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/gitlab-gateway-web/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/CodeQualityEvaluationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/CodeQualityEvaluationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ErrorLineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ErrorLineServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ModuleInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ModuleInformationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/controller/ProjectManagementController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/controller/ProjectManagementController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/FileInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/FileInformationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/FileInformationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/FileInformationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/FileInformationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/target/classes/com/gitlab/service/impl/FileInformationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_sdp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my_sdp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_sdp/TreeLSTM" beforeDir="false" afterPath="$PROJECT_DIR$/my_sdp/TreeLSTM" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_sdp/my_code2vec" beforeDir="false" afterPath="$PROJECT_DIR$/my_sdp/my_code2vec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_sdp/my_code2vec/data/my_dataset/my_dataset.pred.c2v" beforeDir="false" afterPath="$PROJECT_DIR$/my_sdp/my_code2vec/data/my_dataset/my_dataset.pred.c2v" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_sdp/my_code2vec/my_dataset.pred.raw.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my_sdp/my_code2vec/my_dataset.pred.raw.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +50,9 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProjectId" id="1b1mWggAJeNEuJwdf9YSoD75cW2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -56,11 +72,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../codeparser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Web技术/guigui/market" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -77,7 +93,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ProjectsApplication">
+  <component name="RunManager" selected="Spring Boot.EurekaApplication">
     <configuration name="FileInformationServiceImpl.checkFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gitlab-service-projects" />
       <extension name="coverage">
@@ -147,18 +163,18 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.FileInformationServiceImpl.checkFile" />
       <item itemvalue="Spring Boot.EurekaApplication" />
       <item itemvalue="Spring Boot.ProjectsApplication" />
       <item itemvalue="Spring Boot.UsersApplication" />
       <item itemvalue="Spring Boot.GatewayWebApplication" />
-      <item itemvalue="JUnit.FileInformationServiceImpl.checkFile" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ProjectsApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
-        <item itemvalue="Spring Boot.GatewayWebApplication" />
+        <item itemvalue="Spring Boot.ProjectsApplication" />
         <item itemvalue="Spring Boot.UsersApplication" />
+        <item itemvalue="Spring Boot.GatewayWebApplication" />
         <item itemvalue="JUnit.FileInformationServiceImpl.checkFile" />
       </list>
     </recent_temporary>
@@ -176,7 +192,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -229,6 +245,19 @@
       <workItem from="1589847479337" duration="19753000" />
       <workItem from="1589880908163" duration="919000" />
       <workItem from="1589882245314" duration="3008000" />
+      <workItem from="1589948251540" duration="5000" />
+      <workItem from="1589948276993" duration="662000" />
+      <workItem from="1589951025354" duration="8000" />
+      <workItem from="1589951918611" duration="2722000" />
+      <workItem from="1589967968558" duration="650000" />
+      <workItem from="1589968644448" duration="558000" />
+      <workItem from="1589970125397" duration="39000" />
+      <workItem from="1590030414047" duration="811000" />
+      <workItem from="1590042370430" duration="2211000" />
+      <workItem from="1590044845992" duration="398000" />
+      <workItem from="1590045338095" duration="3249000" />
+      <workItem from="1590049022233" duration="679000" />
+      <workItem from="1590056721309" duration="4649000" />
     </task>
     <task id="LOCAL-00001" summary="更新了网关、接口文档">
       <created>1588659710777</created>
@@ -307,6 +336,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/my_sdp/TreeLSTM" />
+      <path value="$PROJECT_DIR$/my_sdp/my_code2vec" />
+    </ignored-roots>
     <MESSAGE value="更新了网关、接口文档" />
     <MESSAGE value="更新了代码上传的基础功能(没用到gitlab的api)" />
     <MESSAGE value="更新了token检验和注册和登录的检测" />
@@ -336,62 +369,66 @@
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589714794618" />
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1589714794618" />
     <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1589714794618" />
-    <state x="232" y="6" key="CommitChangelistDialog2" timestamp="1589885289812">
+    <state x="419" y="12" key="CommitChangelistDialog2" timestamp="1589970139690">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="232" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589885289812" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589787883140">
+    <state x="419" y="12" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589970139690" />
+    <state x="199" y="71" key="DiffContextDialog" timestamp="1589968662761">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589787883140" />
-    <state width="1024" height="107" key="GridCell.Tab.0.bottom" timestamp="1589885286811">
+    <state x="199" y="71" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1589968662761" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589970162171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589885286811" />
-    <state width="1024" height="107" key="GridCell.Tab.0.center" timestamp="1589885286810">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589970162171" />
+    <state width="1493" height="481" key="GridCell.Tab.0.bottom" timestamp="1590072781468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589885286810" />
-    <state width="1024" height="107" key="GridCell.Tab.0.left" timestamp="1589885286809">
+    <state width="1493" height="481" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590072781468" />
+    <state width="1493" height="481" key="GridCell.Tab.0.center" timestamp="1590072781468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589885286809" />
-    <state width="1024" height="107" key="GridCell.Tab.0.right" timestamp="1589885286810">
+    <state width="1493" height="481" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590072781468" />
+    <state width="1493" height="481" key="GridCell.Tab.0.left" timestamp="1590072781468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589885286810" />
-    <state width="1024" height="107" key="GridCell.Tab.1.bottom" timestamp="1589885286811">
+    <state width="1493" height="481" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590072781468" />
+    <state width="1493" height="481" key="GridCell.Tab.0.right" timestamp="1590072781468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589885286811" />
-    <state width="1024" height="107" key="GridCell.Tab.1.center" timestamp="1589885286811">
+    <state width="1493" height="481" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590072781468" />
+    <state width="1024" height="215" key="GridCell.Tab.1.bottom" timestamp="1590072781401">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1589885286811" />
-    <state width="1024" height="107" key="GridCell.Tab.1.left" timestamp="1589885286811">
+    <state width="1024" height="215" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590072781401" />
+    <state width="1024" height="215" key="GridCell.Tab.1.center" timestamp="1590072781401">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1589885286811" />
-    <state width="1024" height="107" key="GridCell.Tab.1.right" timestamp="1589885286811">
+    <state width="1024" height="215" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1590072781401" />
+    <state width="1024" height="215" key="GridCell.Tab.1.left" timestamp="1590072781401">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1589885286811" />
-    <state width="1024" height="107" key="GridCell.Tab.2.bottom" timestamp="1589885286812">
+    <state width="1024" height="215" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1590072781401" />
+    <state width="1024" height="215" key="GridCell.Tab.1.right" timestamp="1590072781401">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589885286812" />
-    <state width="1024" height="107" key="GridCell.Tab.2.center" timestamp="1589885286812">
+    <state width="1024" height="215" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1590072781401" />
+    <state width="1024" height="215" key="GridCell.Tab.2.bottom" timestamp="1590072781401">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1589885286812" />
-    <state width="1024" height="107" key="GridCell.Tab.2.left" timestamp="1589885286811">
+    <state width="1024" height="215" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590072781401" />
+    <state width="1024" height="215" key="GridCell.Tab.2.center" timestamp="1590072781401">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1589885286811" />
-    <state width="1024" height="107" key="GridCell.Tab.2.right" timestamp="1589885286812">
+    <state width="1024" height="215" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1590072781401" />
+    <state width="1024" height="215" key="GridCell.Tab.2.left" timestamp="1590072781401">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="107" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1589885286812" />
+    <state width="1024" height="215" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1590072781401" />
+    <state width="1024" height="215" key="GridCell.Tab.2.right" timestamp="1590072781401">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="215" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1590072781401" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1589714794618" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1589714794618" />
     <state x="147" y="65" key="MergeDialog" timestamp="1589714794618" />
@@ -400,16 +437,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1589882283543" />
-    <state x="270" y="54" key="SettingsEditor" timestamp="1589714794618" />
-    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589714794618" />
+    <state x="270" y="54" key="SettingsEditor" timestamp="1589969172758">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589969172758" />
     <state x="366" y="118" key="Vcs.Push.Dialog.v2" timestamp="1589881784350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589881784350" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589882251017">
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1590049063770">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589882251017" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590049063770" />
     <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589880351515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
