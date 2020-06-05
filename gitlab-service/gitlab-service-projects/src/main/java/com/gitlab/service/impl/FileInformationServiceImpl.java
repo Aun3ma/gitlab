@@ -210,6 +210,32 @@ public class FileInformationServiceImpl implements FileInformationService {
     }
 
     /***
+     * 获取代码文件信息
+     */
+    @Override
+    public String getCode(String fileID) throws Exception{
+        String filename = downloadFile(fileID);
+        if(filename == null){
+            return null;
+        }
+        File file = new File(filename);
+        String str="";
+        try {
+            FileInputStream in=new FileInputStream(file);
+            int size=in.available();
+            byte[] buffer=new byte[size];
+            in.read(buffer);
+            in.close();
+            str=new String(buffer,"GB2312");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        file.delete();
+        return str;
+    }
+
+
+    /***
      * 删除代码文件
      */
     @Override

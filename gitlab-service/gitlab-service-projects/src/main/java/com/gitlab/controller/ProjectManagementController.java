@@ -123,6 +123,19 @@ public class ProjectManagementController {
     }
 
     /***
+     * 获取文件的代码
+     */
+    @ApiOperation(value = "获取文件的代码", notes = "获取文件的代码", tags = {"ProjectManagementController"})
+    @GetMapping(value = "/getCode/{fileID}")
+    public Result getCode(@PathVariable String fileID) throws Exception {
+        String code = fileInformationService.getCode(fileID);
+        if(code == null){
+            return new Result(true, StatusCode.ERROR, "下载文件失败");
+        }
+        return new Result(true, StatusCode.OK, "获取成功",code);
+    }
+
+    /***
      * 下载代码文件（测试用）
      */
     @ApiOperation(value = "下载代码文件（测试用）", notes = "下载代码文件", tags = {"ProjectManagementController"})
