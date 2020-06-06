@@ -33,7 +33,9 @@ public class ErrorLine implements Serializable{
     @Column(name = "error_line")
 	private Integer errorLine;//
 
-
+	@ApiModelProperty(value = "",required = false)
+	@Column(name = "ml_predicted_result")
+	private String mlPredictedResult;//
 
 	//get方法
 	public Integer getErrorId() {
@@ -72,5 +74,14 @@ public class ErrorLine implements Serializable{
 		this.errorLine = errorLine;
 	}
 
+	//get方法
+	public String getMlPredictedResult() {
+		return mlPredictedResult;
+	}
+
+	//set方法
+	public void setMlPredictedResult(String mlPredictedResult) {
+		this.mlPredictedResult = mlPredictedResult;
+	}
 
 }

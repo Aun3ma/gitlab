@@ -126,4 +126,30 @@ public class ErrorLineServiceImpl implements ErrorLineService {
     public List<ErrorLine> findAll() {
         return errorLineMapper.selectAll();
     }
+
+    /***
+     * ErrorLine根据是否为有缺陷查询
+     * @param task_id
+     * @return
+     */
+    @Override
+    public List<ErrorLine> findErrorLineByPre(String task_id){
+        Example example = new Example(ErrorLine.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("taskId",task_id).andEqualTo("mlPredictedResult",1);
+        return errorLineMapper.selectByExample(example);
+    }
+
+    /***
+     * ErrorLine根据是否为无缺陷查询
+     * @param task_id
+     * @return
+     */
+    @Override
+    public List<ErrorLine> findErrorLineByNoPre(String task_id){
+        Example example = new Example(ErrorLine.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("taskId",task_id).andEqualTo("mlPredictedResult",0);
+        return errorLineMapper.selectByExample(example);
+    }
 }

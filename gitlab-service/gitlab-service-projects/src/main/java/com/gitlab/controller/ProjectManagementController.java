@@ -221,6 +221,7 @@ public class ProjectManagementController {
                 errorLine.setFileId(fileID);
                 int line_num = jsonArray.getJSONArray(i).getInteger(j) + begin_line -1;
                 errorLine.setErrorLine(line_num);
+                errorLine.setMlPredictedResult(jsonObject.getJSONArray("lstm_pred").get(i).toString());
                 errorLineService.add(errorLine);
             }
         }

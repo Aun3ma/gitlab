@@ -143,4 +143,32 @@ public class ErrorLineController {
         List<ErrorLine> list = errorLineService.findAll();
         return new Result<List<ErrorLine>>(true, StatusCode.OK,"查询成功",list) ;
     }
+
+    /***
+     * 根据task_ID查询ErrorLine中有缺陷数据
+     * @param task_id
+     * @return
+     */
+    @ApiOperation(value = "根据task_ID查询ErrorLine中有缺陷数据",notes = "根据task_ID查询ErrorLine中有缺陷数据方法详情",tags = {"ErrorLineController"})
+    @ApiImplicitParam(paramType = "path", name = "task_id", value = "任务ID", required = true, dataType = "String")
+    @GetMapping("/searchPre/{task_id}")
+    public Result<ErrorLine> findById(@PathVariable String task_id) {
+        //调用ErrorLineService实现根据主键查询ErrorLine
+        List<ErrorLine> errorLines = errorLineService.findErrorLineByPre(task_id);
+        return new Result<ErrorLine>(true,StatusCode.OK,"查询成功",errorLines);
+    }
+
+    /***
+     * 根据task_ID查询ErrorLine中无缺陷数据
+     * @param task_id
+     * @return
+     */
+    @ApiOperation(value = "根据task_ID查询ErrorLine中无缺陷数据",notes = "根据task_ID查询ErrorLine中无缺陷数据方法详情",tags = {"ErrorLineController"})
+    @ApiImplicitParam(paramType = "path", name = "task_id", value = "任务ID", required = true, dataType = "String")
+    @GetMapping("/searchNoPre/{task_id}")
+    public Result<ErrorLine> findByNoId(@PathVariable String task_id) {
+        //调用ErrorLineService实现根据主键查询ErrorLine
+        List<ErrorLine> errorLines = errorLineService.findErrorLineByNoPre(task_id);
+        return new Result<ErrorLine>(true,StatusCode.OK,"查询成功",errorLines);
+    }
 }

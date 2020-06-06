@@ -2,6 +2,7 @@ package com.gitlab.service;
 
 import com.github.pagehelper.PageInfo;
 import com.gitlab.projects.pojo.ErrorLine;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 /****
@@ -65,4 +66,18 @@ public interface ErrorLineService {
      * @return
      */
     List<ErrorLine> findAll();
+
+    /***
+     * ErrorLine根据是否为有缺陷查询
+     * @param task_id
+     * @return
+     */
+    List<ErrorLine> findErrorLineByPre(String task_id);
+
+    /***
+     * ErrorLine根据是否为无缺陷查询
+     * @param task_id
+     * @return
+     */
+    List<ErrorLine> findErrorLineByNoPre(String task_id);
 }
