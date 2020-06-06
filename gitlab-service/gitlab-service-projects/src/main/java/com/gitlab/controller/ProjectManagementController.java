@@ -63,6 +63,11 @@ public class ProjectManagementController {
         FileUtils.inputStreamToFile(inputStream, file);
 
         FileInformation fileInformation = projectManagementService.uploadFile(projectID, file);
+        if(fileInformation == null){
+            File del = new File(file.toURI());
+            del.delete();
+            return new Result(true, StatusCode.ERROR, "上传失败");
+        }
         fileID = GetUUID.getUUID();
         fileInformation.setFileId(fileID);
         fileInformationService.add(fileInformation);
@@ -92,8 +97,10 @@ public class ProjectManagementController {
     @PostMapping(value = "/createRepo/{userID}/{projectName}/{description}/{visibility}")
     public Result createRepo(@PathVariable String userID, @PathVariable String projectName,
                              @PathVariable String description, @PathVariable String visibility) throws IOException, JSONException {
-
         ProjectInformation projectInformation = projectManagementService.createRepo(userID, projectName, description, visibility);
+        if(projectInformation == null){
+            return new Result(true, StatusCode.ERROR, "新建仓库失败");
+        }
         projectInformationService.add(projectInformation);
         return new Result(true, StatusCode.OK, "新建成功");
     }
@@ -107,6 +114,9 @@ public class ProjectManagementController {
                                  @PathVariable String newProjectName, @PathVariable String newDescription, @PathVariable String newVisibility) throws IOException {
         ProjectInformation projectInformation =
                 projectManagementService.changeRepoInfo(userID, projectID, newProjectName, newDescription, newVisibility);
+        if(projectInformation == null){
+            return new Result(true, StatusCode.ERROR, "修改失败");
+        }
         projectInformationService.update(projectInformation);
         return new Result(true, StatusCode.OK, "修改成功");
     }

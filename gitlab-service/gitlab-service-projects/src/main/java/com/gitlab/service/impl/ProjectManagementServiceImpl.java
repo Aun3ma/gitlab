@@ -95,6 +95,9 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
 
         JSONObject response = JSONObject.parseObject(message);
         String filePath = response.getString("file_path");
+        if(filePath == null){
+            return null;
+        }
 
         FileInformation fileInformation = new FileInformation();
         fileInformation.setFileName(uploadFile.getName());
@@ -157,7 +160,9 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
 
         String projectID = jsonObject.getString("id");
         Timestamp createTime = jsonObject.getTimestamp("created_at");
-
+        if( projectID == null){
+            return null;
+        }
         ProjectInformation projectInformation = new ProjectInformation();
         projectInformation.setProjId(projectID);
         projectInformation.setCreateTime(createTime);
@@ -165,6 +170,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
         projectInformation.setProjName(projectName);
         projectInformation.setUpdateTime(createTime);
         projectInformation.setVisibility(visibility);
+        projectInformation.setProjectDescription(description);
 
         return projectInformation;
     }
@@ -199,7 +205,9 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
 
         Timestamp createTime = jsonObject.getTimestamp("created_at");
         Timestamp updateTime = jsonObject.getTimestamp("last_activity_at");
-
+        if(updateTime == null){
+            return null;
+        }
 
         ProjectInformation projectInformation = new ProjectInformation();
         projectInformation.setProjId(projectID);

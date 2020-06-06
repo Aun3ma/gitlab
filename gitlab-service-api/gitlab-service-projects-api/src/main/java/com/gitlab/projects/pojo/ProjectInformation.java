@@ -44,6 +44,9 @@ public class ProjectInformation implements Serializable{
     @Column(name = "update_time")
 	private Date updateTime;//
 
+	@ApiModelProperty(value = "",required = false)
+	@Column(name = "description")
+	private String description;//
 
 
 	//get方法
@@ -110,5 +113,14 @@ public class ProjectInformation implements Serializable{
 		this.updateTime = updateTime;
 	}
 
+	//get方法
+	public String getProjectDescription() {
+		return description;
+	}
+
+	//set方法
+	public void setProjectDescription(String description) {
+		this.description = description;
+	}
 
 }
