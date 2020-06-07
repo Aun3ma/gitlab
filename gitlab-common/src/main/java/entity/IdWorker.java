@@ -161,11 +161,11 @@ public class IdWorker {
         return id;
     }
 
-    public Date getFormatDate(){
+    public String getFormatDate(){
         Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateString = formatter.format(date);
-        return java.sql.Date.valueOf(dateString);
+        return dateString;
     }
 
     public static void main(String[] args) {

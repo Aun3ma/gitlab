@@ -24,6 +24,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Api(value = "ProjectManagementController")
@@ -70,6 +72,7 @@ public class ProjectManagementController {
         }
         fileID = GetUUID.getUUID();
         fileInformation.setFileId(fileID);
+        fileInformation.setCreateTime(getFormatDate());
         fileInformationService.add(fileInformation);
 
         File del = new File(file.toURI());
@@ -78,6 +81,12 @@ public class ProjectManagementController {
         return new Result(true, StatusCode.OK, "上传成功");
     }
 
+    public String getFormatDate(){
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateString = formatter.format(date);
+        return dateString;
+    }
     /***
      * 删除仓库实现
      */
@@ -152,8 +161,8 @@ public class ProjectManagementController {
      * 修改代码文件
      */
     @ApiOperation(value = "修改代码文件", notes = "修改代码文件", tags = {"ProjectManagementController"})
-    @GetMapping(value = "/modifyCode/{fileID}/{newContent}")
-    public Result modifyCode(@PathVariable String fileID, @PathVariable String newContent) throws Exception {
+    @PostMapping(value = "/modifyCode")
+    public Result modifyCode(@RequestParam String fileID, @RequestParam String newContent) throws Exception {
         if(!fileInformationService.modifyFile(fileID, newContent)){
             return new Result(true, StatusCode.ERROR, "修改失败");
         }
@@ -210,11 +219,12 @@ public class ProjectManagementController {
         CodeQualityEvaluation codeQualityEvaluation = new CodeQualityEvaluation();
         IdWorker idWorker = new IdWorker(0,0);
         long task_id = idWorker.nextId();
+        Date date = new Date();
         System.out.println(task_id);
         codeQualityEvaluation.setTaskId(Long.toString(task_id));
         codeQualityEvaluation.setPorjVersion("1.0");
         codeQualityEvaluation.setProjBranch("master");
-        codeQualityEvaluation.setStartTime(idWorker.getFormatDate());
+        codeQualityEvaluation.setStartTime(date);
         codeQualityEvaluation.setProjId(fileID);
         codeQualityEvaluation.setUserId(userID);
         codeQualityEvaluation.setTaskState(2);

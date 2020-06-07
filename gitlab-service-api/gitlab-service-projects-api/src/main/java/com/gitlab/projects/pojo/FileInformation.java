@@ -4,6 +4,8 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.lang.String;
+import java.util.Date;
+
 /**
  * @Author:shenjunjie
  * @Description:FileInformation构建
@@ -39,6 +41,9 @@ public class FileInformation implements Serializable{
     @Column(name = "file_path")
 	private String filePath;//
 
+	@ApiModelProperty(value = "",required = false)
+	@Column(name = "create_time")
+	private String createTime;//
 
 
 	//get方法
@@ -96,5 +101,13 @@ public class FileInformation implements Serializable{
 		this.filePath = filePath;
 	}
 
+	//get方法
+	public String getCreateTime() {
+		return createTime;
+	}
 
+	//set方法
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
 }

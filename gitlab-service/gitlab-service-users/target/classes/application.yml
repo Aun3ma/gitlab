@@ -25,6 +25,7 @@ eureka:
   client:
     service-url:
       defaultZone: http://172.18.180.19:7001/eureka
+#      defaultZone: http://127.0.0.1:7001/eureka
   instance:
     prefer-ip-address: true
 #开启feign的熔断：默认是线程池隔离
