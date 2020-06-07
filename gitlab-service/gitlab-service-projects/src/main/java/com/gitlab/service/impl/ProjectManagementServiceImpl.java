@@ -60,8 +60,8 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
      */
     @Override
     public FileInformation uploadFile(String projectID, File uploadFile) throws IOException {
-        String privateToken = "76hSmH3ihw9f_29SadRS";
-        String url = "http://111.231.248.99:81/api/v4/projects/" + projectID + "/repository/files/" + uploadFile.getName();
+        String privateToken = "2-NTBRTswUhGm-4dzmWh";
+        String url = "http://106.55.48.209/api/v4/projects/" + projectID + "/repository/files/" + uploadFile.getName();
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
@@ -112,8 +112,8 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
      */
     @Override
     public boolean deleteRepo(String projectID) throws IOException {
-        String privateToken = "76hSmH3ihw9f_29SadRS";
-        String url = "http://111.231.248.99:81/api/v4/projects/" + projectID;
+        String privateToken = "2-NTBRTswUhGm-4dzmWh";
+        String url = "http://106.55.48.209/api/v4/projects/" + projectID;
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
@@ -134,8 +134,8 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
     @Override
     public ProjectInformation createRepo(
             String userID, String projectName, String description, String visibility) throws IOException, JSONException {
-        String privateToken = "76hSmH3ihw9f_29SadRS";
-        String url = "http://111.231.248.99:81/api/v4/projects";
+        String privateToken = "2-NTBRTswUhGm-4dzmWh";
+        String url = "http://106.55.48.209/api/v4/projects";
 
         List<NameValuePair> formparams = new ArrayList<NameValuePair>();
         formparams.add(new BasicNameValuePair("private_token", privateToken));
@@ -155,6 +155,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
         HttpEntity entity = httpResponse.getEntity();
 
         String message = EntityUtils.toString(entity);
+        System.out.println(message);
 
         JSONObject jsonObject = JSONObject.parseObject(message);
 
@@ -181,8 +182,8 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
     @Override
     public ProjectInformation changeRepoInfo(
             String userID, String projectID, String newProjectName, String newDescription, String visibility) throws IOException {
-        String privateToken = "76hSmH3ihw9f_29SadRS";
-        String url = "http://111.231.248.99:81/api/v4/projects/" + projectID;
+        String privateToken = "2-NTBRTswUhGm-4dzmWh";
+        String url = "http://106.55.48.209/api/v4/projects/" + projectID;
 
         List<NameValuePair> formparams = new ArrayList<NameValuePair>();
         formparams.add(new BasicNameValuePair("private_token", privateToken));

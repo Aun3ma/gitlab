@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8d502b8-58e4-4ffe-a73d-dabc35cd4498" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-common/gitlab-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common/gitlab-common.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/FileInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/FileInformationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/FileInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/FileInformationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectManagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectManagementServiceImpl.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,8 +161,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ProjectsApplication" />
-        <item itemvalue="Spring Boot.GatewayWebApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
+        <item itemvalue="Spring Boot.GatewayWebApplication" />
         <item itemvalue="Spring Boot.UsersApplication" />
         <item itemvalue="JUnit.UserInformationController.getFormatDate" />
       </list>
@@ -181,22 +176,22 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d852502a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4af0f0cd" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d852502a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2907c689" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4af0f0cd" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2eeb0018" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d852502a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@46004885" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4af0f0cd" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@9ec5d14c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d852502a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@1d95f4e8" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4af0f0cd" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@e3dce451" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -261,7 +256,8 @@
       <workItem from="1591423608192" duration="2925000" />
       <workItem from="1591431540609" duration="814000" />
       <workItem from="1591432462437" duration="3814000" />
-      <workItem from="1591497858258" duration="2276000" />
+      <workItem from="1591497858258" duration="2515000" />
+      <workItem from="1591513737595" duration="1602000" />
     </task>
     <task id="LOCAL-00001" summary="更新了网关、接口文档">
       <created>1588659710777</created>

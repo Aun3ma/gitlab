@@ -179,8 +179,8 @@ public class FileInformationServiceImpl implements FileInformationService {
     public String downloadFile(String fileID) throws Exception {
         FileInformation fileInformation = findById(fileID);
 
-        String privateToken = "76hSmH3ihw9f_29SadRS";
-        String url = "http://111.231.248.99:81/api/v4/projects/" +
+        String privateToken = "2-NTBRTswUhGm-4dzmWh";
+        String url = "http://106.55.48.209/api/v4/projects/" +
                 fileInformation.getTaskId() + "/repository/files/" + fileInformation.getFilePath();
 
         URI uri = new URIBuilder(url).setParameter("ref", "master").build();
@@ -241,8 +241,8 @@ public class FileInformationServiceImpl implements FileInformationService {
         String projectID = fileInformation.getTaskId();
         String filePath = fileInformation.getFilePath();
 
-        String privateToken = "76hSmH3ihw9f_29SadRS";
-        String url = "http://111.231.248.99:81/api/v4/projects/" + projectID + "/repository/files/" + filePath;
+        String privateToken = "2-NTBRTswUhGm-4dzmWh";
+        String url = "http://106.55.48.209/api/v4/projects/" + projectID + "/repository/files/" + filePath;
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpDeleteWithBody httpDeleteWithBody = new HttpDeleteWithBody(url);
@@ -263,8 +263,11 @@ public class FileInformationServiceImpl implements FileInformationService {
         CloseableHttpResponse httpResponse = httpClient.execute(httpDeleteWithBody);
         HttpEntity entity = httpResponse.getEntity();
 
-        String message = EntityUtils.toString(entity);
-        System.out.println(message);
+        if (entity != null){
+            return false;
+        }
+//        String message = EntityUtils.toString(entity);
+//        System.out.println(message);
 
         delete(fileID);
 
@@ -280,8 +283,8 @@ public class FileInformationServiceImpl implements FileInformationService {
         String projectID = fileInformation.getTaskId();
         String filePath = fileInformation.getFilePath();
 
-        String privateToken = "76hSmH3ihw9f_29SadRS";
-        String url = "http://111.231.248.99:81/api/v4/projects/" + projectID + "/repository/files/" + filePath;
+        String privateToken = "2-NTBRTswUhGm-4dzmWh";
+        String url = "http://106.55.48.209/api/v4/projects/" + projectID + "/repository/files/" + filePath;
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPut httpPut = new HttpPut(url);

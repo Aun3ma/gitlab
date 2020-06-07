@@ -127,7 +127,10 @@ public class ProjectManagementController {
     @ApiOperation(value = "删除代码文件", notes = "删除FileInformation中的一条数据", tags = {"ProjectManagementController"})
     @DeleteMapping(value = "/deleteFile/{fileID}")
     public Result deleteFile(@PathVariable String fileID) throws IOException {
-        fileInformationService.deleteFile(fileID);
+
+        if (!fileInformationService.deleteFile(fileID)){
+            return new Result(true, StatusCode.OK, "删除失败");
+        }
 
         return new Result(true, StatusCode.OK, "删除成功");
     }
