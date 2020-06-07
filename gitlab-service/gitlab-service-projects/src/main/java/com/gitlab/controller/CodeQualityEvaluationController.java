@@ -63,14 +63,14 @@ public class CodeQualityEvaluationController {
 
     /***
      * 多条件搜索codeQualityEvaluation数据
-     * @param codeQualityEvaluation
+     * @param userId
      * @return
      */
     @ApiOperation(value = "CodeQualityEvaluation条件查询",notes = "条件查询CodeQualityEvaluation方法详情",tags = {"CodeQualityEvaluationController"})
-    @PostMapping(value = "/search" )
-    public Result<List<CodeQualityEvaluation>> findList(@RequestBody(required = false) @ApiParam(name = "CodeQualityEvaluation对象",value = "传入JSON数据",required = false) CodeQualityEvaluation codeQualityEvaluation) {
+    @GetMapping(value = "/search/{userId}" )
+    public Result<List<CodeQualityEvaluation>> findList(@PathVariable String userId) {
         //调用CodeQualityEvaluationService实现条件查询CodeQualityEvaluation
-        List<CodeQualityEvaluation> list = codeQualityEvaluationService.findList(codeQualityEvaluation);
+        List<CodeQualityEvaluation> list = codeQualityEvaluationService.findByUserID(userId);
         return new Result<List<CodeQualityEvaluation>>(true,StatusCode.OK,"查询成功",list);
     }
 

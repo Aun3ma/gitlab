@@ -3,6 +3,7 @@ package com.gitlab.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.gitlab.dao.ModuleInformationMapper;
+import com.gitlab.projects.pojo.CodeQualityEvaluation;
 import com.gitlab.projects.pojo.ModuleInformation;
 import com.gitlab.service.ModuleInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +80,16 @@ public class ModuleInformationServiceImpl implements ModuleInformationService {
             criteria.andEqualTo("fileId",moduleInformation.getFileId());
         }
         return example;
+    }
+
+    /***
+     * 查询ModuleInformation
+     * @return
+     */
+    public List<ModuleInformation> findByUserID(String task_id){
+        ModuleInformation moduleInformation = new ModuleInformation();
+        moduleInformation.setFileId(task_id);
+        return findList(moduleInformation);
     }
 
     /**

@@ -65,4 +65,10 @@ public interface CodeQualityEvaluationService {
      * @return
      */
     List<CodeQualityEvaluation> findAll();
+
+    /***
+     * 查询所有CodeQualityEvaluation
+     * @return
+     */
+    List<CodeQualityEvaluation> findByUserID(String user_id);
 }

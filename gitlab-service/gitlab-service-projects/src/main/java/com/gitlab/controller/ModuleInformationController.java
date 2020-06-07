@@ -63,14 +63,14 @@ public class ModuleInformationController {
 
     /***
      * 多条件搜索moduleInformation数据
-     * @param moduleInformation
+     * @param fileId
      * @return
      */
     @ApiOperation(value = "ModuleInformation条件查询",notes = "条件查询ModuleInformation方法详情",tags = {"ModuleInformationController"})
-    @PostMapping(value = "/search" )
-    public Result<List<ModuleInformation>> findList(@RequestBody(required = false) @ApiParam(name = "ModuleInformation对象",value = "传入JSON数据",required = false) ModuleInformation moduleInformation) {
+    @PostMapping(value = "/search/{fileId}" )
+    public Result<List<ModuleInformation>> findList(@PathVariable String fileId) {
         //调用ModuleInformationService实现条件查询ModuleInformation
-        List<ModuleInformation> list = moduleInformationService.findList(moduleInformation);
+        List<ModuleInformation> list = moduleInformationService.findByUserID(fileId);
         return new Result<List<ModuleInformation>>(true,StatusCode.OK,"查询成功",list);
     }
 

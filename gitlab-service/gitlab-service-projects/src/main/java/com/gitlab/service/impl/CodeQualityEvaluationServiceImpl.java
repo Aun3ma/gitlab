@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.gitlab.dao.CodeQualityEvaluationMapper;
 import com.gitlab.projects.pojo.CodeQualityEvaluation;
+import com.gitlab.projects.pojo.ProjectInformation;
 import com.gitlab.service.CodeQualityEvaluationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,6 +67,18 @@ public class CodeQualityEvaluationServiceImpl implements CodeQualityEvaluationSe
         return codeQualityEvaluationMapper.selectByExample(example);
     }
 
+
+    /***
+     * 查询所有CodeQualityEvaluation
+     * @return
+     */
+    @Override
+    public List<CodeQualityEvaluation> findByUserID(String user_id){
+        CodeQualityEvaluation codeQualityEvaluation = new CodeQualityEvaluation();
+        codeQualityEvaluation.setUserId(user_id);
+        return findList(codeQualityEvaluation);
+
+    }
 
     /**
      * CodeQualityEvaluation构建查询对象

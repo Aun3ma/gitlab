@@ -1,6 +1,7 @@
 package com.gitlab.service;
 
 import com.github.pagehelper.PageInfo;
+import com.gitlab.projects.pojo.CodeQualityEvaluation;
 import com.gitlab.projects.pojo.ModuleInformation;
 
 import java.util.List;
@@ -65,4 +66,10 @@ public interface ModuleInformationService {
      * @return
      */
     List<ModuleInformation> findAll();
+
+    /***
+     * 查询所有CodeQualityEvaluation
+     * @return
+     */
+    List<ModuleInformation> findByUserID(String task_id);
 }
