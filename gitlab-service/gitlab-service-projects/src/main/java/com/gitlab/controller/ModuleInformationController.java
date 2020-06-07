@@ -67,7 +67,7 @@ public class ModuleInformationController {
      * @return
      */
     @ApiOperation(value = "ModuleInformation条件查询",notes = "条件查询ModuleInformation方法详情",tags = {"ModuleInformationController"})
-    @PostMapping(value = "/search/{fileId}" )
+    @GetMapping(value = "/search/{fileId}" )
     public Result<List<ModuleInformation>> findList(@PathVariable String fileId) {
         //调用ModuleInformationService实现条件查询ModuleInformation
         List<ModuleInformation> list = moduleInformationService.findByUserID(fileId);
