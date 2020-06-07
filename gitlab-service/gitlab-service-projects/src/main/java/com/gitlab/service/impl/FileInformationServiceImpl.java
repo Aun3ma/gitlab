@@ -23,10 +23,7 @@ import entity.Method;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.*;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -252,7 +249,7 @@ public class FileInformationServiceImpl implements FileInformationService {
 
         net.minidev.json.JSONObject jsonObject = new net.minidev.json.JSONObject();
         jsonObject.appendField("branch", "master");
-        jsonObject.appendField("commit_message", "New Code File");
+        jsonObject.appendField("commit_message", "Delete Code File");
 
         String json = jsonObject.toJSONString();
 
@@ -272,6 +269,46 @@ public class FileInformationServiceImpl implements FileInformationService {
         delete(fileID);
 
         return true;
+    }
+
+    /***
+     * 修改代码文件
+     */
+    @Override
+    public boolean modifyFile(String fileID, String newContent) throws IOException {
+        FileInformation fileInformation = findById(fileID);
+        String projectID = fileInformation.getTaskId();
+        String filePath = fileInformation.getFilePath();
+
+        String privateToken = "76hSmH3ihw9f_29SadRS";
+        String url = "http://111.231.248.99:81/api/v4/projects/" + projectID + "/repository/files/" + filePath;
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpPut httpPut = new HttpPut(url);
+
+        net.minidev.json.JSONObject jsonObject = new net.minidev.json.JSONObject();
+        jsonObject.appendField("branch", "master");
+        jsonObject.appendField("commit_message", "Modify Code File");
+        jsonObject.appendField("content", newContent);
+
+        String json = jsonObject.toJSONString();
+
+        System.out.println(json);
+
+        StringEntity requestEntity = new StringEntity(json,"utf-8");
+        requestEntity.setContentType("application/json");
+
+        httpPut.addHeader("PRIVATE-TOKEN", privateToken);
+        httpPut.setEntity(requestEntity);
+        CloseableHttpResponse httpResponse = httpClient.execute(httpPut);
+        HttpEntity entity = httpResponse.getEntity();
+
+        String message = EntityUtils.toString(entity);
+        JSONObject response = JSONObject.parseObject(message);
+        String resp = response.getString("file_path");
+        System.out.println(message);
+
+        return resp != null;
     }
 
     /***

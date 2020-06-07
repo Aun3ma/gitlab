@@ -142,7 +142,19 @@ public class ProjectManagementController {
         if(code == null){
             return new Result(true, StatusCode.ERROR, "下载文件失败");
         }
-        return new Result(true, StatusCode.OK, "获取成功",code);
+        return new Result(true, StatusCode.OK, "获取成功", code);
+    }
+
+    /***
+     * 修改代码文件
+     */
+    @ApiOperation(value = "修改代码文件", notes = "修改代码文件", tags = {"ProjectManagementController"})
+    @GetMapping(value = "/modifyCode/{fileID}/{newContent}")
+    public Result modifyCode(@PathVariable String fileID, @PathVariable String newContent) throws Exception {
+        if(!fileInformationService.modifyFile(fileID, newContent)){
+            return new Result(true, StatusCode.ERROR, "修改失败");
+        }
+        return new Result(true, StatusCode.OK, "修改成功");
     }
 
     /***
@@ -152,7 +164,6 @@ public class ProjectManagementController {
     @GetMapping(value = "/downloadFile/{fileID}")
     public Result downloadFile(@PathVariable String fileID) throws Exception {
         fileInformationService.downloadFile(fileID);
-
 
         return new Result(true, StatusCode.OK, "下载成功");
     }

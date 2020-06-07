@@ -81,6 +81,11 @@ public interface FileInformationService {
     String downloadFile(String fileID) throws Exception;
 
     /***
+     * 修改代码文件
+     */
+    boolean modifyFile(String fileID, String newContent) throws IOException;
+
+    /***
      * 获取代码文件信息
      */
     String getCode(String fileID) throws Exception;
