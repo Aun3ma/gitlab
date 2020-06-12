@@ -7,6 +7,9 @@ import com.gitlab.dao.UserInformationMapper;
 import com.gitlab.service.UserInformationService;
 import com.gitlab.users.dto.DtoLoginInformation;
 import com.gitlab.users.pojo.UserInformation;
+import entity.IdWorker;
+import entity.Result;
+import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -151,5 +154,24 @@ public class UserInformationServiceImpl implements UserInformationService {
     @Override
     public List<UserInformation> findAll() {
         return userInformationMapper.selectAll();
+    }
+
+    /***
+     * 更改密码
+     */
+    @Override
+    public boolean changePassword(String id , String new_password){
+        Example example = new Example(UserInformation.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("userId",id);
+        userInformationMapper.selectByExample(example);
+        List<UserInformation> users = userInformationMapper.selectByExample(example);
+        if(!users.isEmpty()){
+            UserInformation userInformation = users.get(0);
+            userInformation.setPassword(new_password);
+            userInformationMapper.updateByPrimaryKey(userInformation);
+            return true;
+        }
+        return false;
     }
 }

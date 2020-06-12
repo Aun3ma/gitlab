@@ -31,6 +31,7 @@ public class UserInformationController {
     @Autowired
     private UserInformationService userInformationService;
 
+
     /**
      * 登录
      */
@@ -133,6 +134,25 @@ public class UserInformationController {
         //调用UserInformationService实现根据主键删除
         userInformationService.delete(id);
         return new Result(true,StatusCode.OK,"删除成功");
+    }
+
+    /***
+     * 修改密码
+     * @param id
+     * @param new_password
+     * @return
+     */
+    @ApiOperation(value = "修改密码",notes = "根据ID修改密码",tags = {"UserInformationController"})
+    @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "String")
+    @PutMapping(value="/{id}/{new_password}")
+    public Result changePassword(@PathVariable String id,@PathVariable String new_password) {
+        if(id.equals("")||new_password.equals("")){
+            return new Result(true,StatusCode.ERROR,"账号或密码输入错误");
+        }
+        if(userInformationService.changePassword(id ,new_password)){
+            return new Result(true,StatusCode.OK,"修改成功");
+        }
+        return new Result(true,StatusCode.ERROR,"账号不存在");
     }
 
     /***

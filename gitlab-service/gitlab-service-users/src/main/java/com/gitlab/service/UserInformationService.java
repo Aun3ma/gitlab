@@ -68,4 +68,9 @@ public interface UserInformationService {
      * @return
      */
     List<UserInformation> findAll();
+
+    /***
+     * 更改密码
+     */
+    boolean changePassword(String id , String new_password);
 }
