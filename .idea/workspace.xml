@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d8d502b8-58e4-4ffe-a73d-dabc35cd4498" name="Default Changelist" comment="">
+    <list default="true" id="d8d502b8-58e4-4ffe-a73d-dabc35cd4498" name="Default Changelist" comment="更新了 改了module的get">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint-state.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitlab-service-api/gitlab-service-projects-api/src/main/java/com/gitlab/projects/dto/CodeReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/controller/UserInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/controller/UserInformationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/service/UserInformationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/service/UserInformationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/service/impl/UserInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/src/main/java/com/gitlab/service/impl/UserInformationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-common-db/gitlab-common-db.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-common-db/gitlab-common-db.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/gitlab-service-projects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectInformationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectInformationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/controller/ProjectManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/ProjectManagementService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/ProjectManagementService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/FileInformationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/FileInformationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectManagementServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/java/com/gitlab/service/impl/ProjectManagementServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-projects/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service-users/gitlab-service-users.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gitlab-service/gitlab-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +68,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="org.sonarlint.intellij.config.project.SonarLintProjectConfigurable" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -69,6 +83,16 @@
       <set>
         <option value="SpringBootApplicationConfigurationType" />
       </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ProjectsApplication">
@@ -158,25 +182,29 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
+    <option name="allServicesViewState">
+      <serviceView>
+        <option name="contentProportion" value="0.25697103" />
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a1b67d43" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a1b67d43" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@d4c65d75" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@a1b67d43" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@70714a7c" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -251,6 +279,8 @@
       <workItem from="1591548279172" duration="1397000" />
       <workItem from="1591883428833" duration="163000" />
       <workItem from="1591946208149" duration="1924000" />
+      <workItem from="1592293458797" duration="4492000" />
+      <workItem from="1592396768922" duration="11916000" />
     </task>
     <task id="LOCAL-00001" summary="更新了网关、接口文档">
       <created>1588659710777</created>
@@ -373,107 +403,69 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新了 改了module的get" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#Inspections" timestamp="1591506235714" />
-    <state x="361" y="71" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591506235714" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1591506235714" />
-    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1591506238851">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1591506238851" />
-    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1591506235714" />
-    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591506235714" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1591506235714" />
-    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="196" y="6" key="CommitChangelistDialog2" timestamp="1591948147682">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="196" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591948147682" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1591883591173">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591883591173" />
-    <state width="1493" height="481" key="GridCell.Tab.0.bottom" timestamp="1591549679783">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="481" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591549679783" />
-    <state width="1493" height="481" key="GridCell.Tab.0.center" timestamp="1591549679783">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="481" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591549679783" />
-    <state width="1493" height="481" key="GridCell.Tab.0.left" timestamp="1591549679783">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="481" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591549679783" />
-    <state width="1493" height="481" key="GridCell.Tab.0.right" timestamp="1591549679783">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="481" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591549679783" />
-    <state width="1024" height="215" key="GridCell.Tab.1.bottom" timestamp="1591547731772">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="215" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591547731772" />
-    <state width="1024" height="215" key="GridCell.Tab.1.center" timestamp="1591547731772">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="215" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591547731772" />
-    <state width="1024" height="215" key="GridCell.Tab.1.left" timestamp="1591547731772">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="215" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591547731772" />
-    <state width="1024" height="215" key="GridCell.Tab.1.right" timestamp="1591547731772">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="215" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591547731772" />
-    <state width="1024" height="215" key="GridCell.Tab.2.bottom" timestamp="1591547731772">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="215" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591547731772" />
-    <state width="1024" height="215" key="GridCell.Tab.2.center" timestamp="1591547731772">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="215" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1591547731772" />
-    <state width="1024" height="215" key="GridCell.Tab.2.left" timestamp="1591547731772">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="215" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1591547731772" />
-    <state width="1024" height="215" key="GridCell.Tab.2.right" timestamp="1591547731772">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1024" height="215" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1591547731772" />
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1591506235714" />
-    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1591506235714" />
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="477" y="128" key="MultipleFileMergeDialog" timestamp="1591522434165">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="477" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1591522434165" />
-    <state x="270" y="0" key="SettingsEditor" timestamp="1591506235714" />
-    <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="461" y="171" key="Vcs.Multiple.Commit.Info.Dialog.Key" timestamp="1591506235714" />
-    <state x="461" y="171" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="366" y="118" key="Vcs.Push.Dialog.v2" timestamp="1591549203974">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591549203974" />
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1591883481354">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1591883481354" />
-    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591522496745">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1591522496745" />
-    <state x="530" y="124" key="git4idea.branch.GitSmartOperationDialog" timestamp="1591506235714" />
-    <state x="530" y="124" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="496" y="203" key="git4idea.merge.GitPullDialog" timestamp="1591506235714" />
-    <state x="496" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
-    <state x="356" y="74" key="new project wizard" timestamp="1591506235714" />
-    <state x="356" y="74" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1591506235714" />
+    <state x="361" y="71" key="#Inspections" />
+    <state x="361" y="71" key="#Inspections/0.0.1536.824@0.0.1536.824" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser" />
+    <state x="574" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" />
+    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
+    <state x="614" y="301" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" />
+    <state x="439" y="271" width="657" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" />
+    <state x="499" y="159" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="196" y="6" key="CommitChangelistDialog2" />
+    <state x="196" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" />
+    <state x="549" y="167" key="FileChooserDialogImpl" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="481" key="GridCell.Tab.0.bottom" />
+    <state width="1493" height="481" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="481" key="GridCell.Tab.0.center" />
+    <state width="1493" height="481" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="481" key="GridCell.Tab.0.left" />
+    <state width="1493" height="481" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" />
+    <state width="1493" height="481" key="GridCell.Tab.0.right" />
+    <state width="1493" height="481" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" />
+    <state width="1024" height="215" key="GridCell.Tab.1.bottom" />
+    <state width="1024" height="215" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" />
+    <state width="1024" height="215" key="GridCell.Tab.1.center" />
+    <state width="1024" height="215" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" />
+    <state width="1024" height="215" key="GridCell.Tab.1.left" />
+    <state width="1024" height="215" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" />
+    <state width="1024" height="215" key="GridCell.Tab.1.right" />
+    <state width="1024" height="215" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" />
+    <state width="1024" height="215" key="GridCell.Tab.2.bottom" />
+    <state width="1024" height="215" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" />
+    <state width="1024" height="215" key="GridCell.Tab.2.center" />
+    <state width="1024" height="215" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" />
+    <state width="1024" height="215" key="GridCell.Tab.2.left" />
+    <state width="1024" height="215" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" />
+    <state width="1024" height="215" key="GridCell.Tab.2.right" />
+    <state width="1024" height="215" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog" />
+    <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="147" y="65" key="MergeDialog" />
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="477" y="128" key="MultipleFileMergeDialog" />
+    <state x="477" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="270" y="0" key="SettingsEditor" />
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" />
+    <state x="461" y="171" key="Vcs.Multiple.Commit.Info.Dialog.Key" />
+    <state x="461" y="171" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1536.824@0.0.1536.824" />
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2" />
+    <state x="366" y="118" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog" />
+    <state x="449" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
+    <state x="562" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" />
+    <state x="530" y="124" key="git4idea.branch.GitSmartOperationDialog" />
+    <state x="530" y="124" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="496" y="203" key="git4idea.merge.GitPullDialog" />
+    <state x="496" y="203" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" />
+    <state x="356" y="74" key="new project wizard" />
+    <state x="356" y="74" key="new project wizard/0.0.1536.824@0.0.1536.824" />
   </component>
 </project>

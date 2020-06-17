@@ -1,6 +1,7 @@
 package com.gitlab.service;
 
 import com.github.pagehelper.PageInfo;
+import com.gitlab.projects.dto.CodeReport;
 import com.gitlab.projects.pojo.FileInformation;
 import com.gitlab.projects.pojo.ProjectInformation;
 import org.json.JSONException;
@@ -31,4 +32,9 @@ public interface ProjectManagementService {
      * 编辑仓库信息
      */
     ProjectInformation changeRepoInfo(String userID, String projectID, String newProjectName, String newDescription, String visibility) throws IOException;
+
+    /***
+     * 获取静态检测报告
+     */
+    CodeReport getReport() throws IOException;
 }

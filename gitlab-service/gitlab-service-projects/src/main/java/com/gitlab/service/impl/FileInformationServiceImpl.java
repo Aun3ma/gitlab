@@ -180,7 +180,7 @@ public class FileInformationServiceImpl implements FileInformationService {
         FileInformation fileInformation = findById(fileID);
 
         String privateToken = "2-NTBRTswUhGm-4dzmWh";
-        String url = "http://106.55.48.209/api/v4/projects/" +
+        String url = "http://106.53.204.22/api/v4/projects/" +
                 fileInformation.getTaskId() + "/repository/files/" + fileInformation.getFilePath();
 
         URI uri = new URIBuilder(url).setParameter("ref", "master").build();
@@ -198,7 +198,14 @@ public class FileInformationServiceImpl implements FileInformationService {
         String Base64Code = response.getString("content");
         String fileName = response.getString("file_name");
 
+        System.out.println(fileName);
+
         DecodeBase64.decoderBase64File(Base64Code, fileName);
+
+        // 静态测试项目路径
+        String staticAnalysisFilePath =
+                "C:\\Users\\19134\\Desktop\\SonarQubeTestProgram\\src\\test." + fileName.split("\\.")[1];
+        DecodeBase64.decoderBase64File(Base64Code, staticAnalysisFilePath);
 
 //        File del = new File(fileName);
 //        del.delete();

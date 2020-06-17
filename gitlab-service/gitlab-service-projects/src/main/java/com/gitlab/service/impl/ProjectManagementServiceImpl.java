@@ -1,58 +1,29 @@
 package com.gitlab.service.impl;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
-import com.gitlab.dao.ProjectInformationMapper;
+import com.gitlab.projects.dto.CodeReport;
 import com.gitlab.projects.pojo.FileInformation;
 import com.gitlab.projects.pojo.ProjectInformation;
-import com.gitlab.service.ProjectInformationService;
 import com.gitlab.service.ProjectManagementService;
-import com.netflix.ribbon.proxy.Utils;
-import com.netflix.ribbon.proxy.annotation.Http;
-import entity.Result;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.Consts;
-import org.apache.http.HttpConnection;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.*;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import org.gitlab.api.models.GitlabProject;
-import org.gitlab.api.models.GitlabSession;
-import org.gitlab.api.models.GitlabUpload;
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONTokener;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.info.GitProperties;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-import org.springframework.web.multipart.MultipartFile;
-import tk.mybatis.mapper.entity.Example;
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
-import org.gitlab.api.*;
-
-import javax.swing.table.TableRowSorter;
-import javax.xml.crypto.Data;
 
 @Service
 public class ProjectManagementServiceImpl implements ProjectManagementService {
@@ -221,6 +192,66 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
         projectInformation.setVisibility(visibility);
 
         return projectInformation;
+    }
+
+    /***
+     * 获取静态检测报告
+     */
+    @Override
+    public CodeReport getReport() throws IOException {
+
+        try {
+            Process p = Runtime.getRuntime().exec(
+                    "cmd /c start /w /MIN C:\\Users\\19134\\Desktop\\SonarQubeTestProgram\\cmd.bat");
+            p.waitFor();
+            p.destroy();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        String url = "http://8.129.183.196:9000/api/measures/component?" +
+                "component=sonarScannerTest&metricKeys=bugs,vulnerabilities,duplicated_lines_density,code_smells";
+        String privateToken = "Basic YWRtaW46YWRtaW4=";
+
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        HttpGet httpGet = new HttpGet(url);
+
+        httpGet.setHeader("Authorization", privateToken);
+        CloseableHttpResponse httpResponse = httpClient.execute(httpGet);
+        HttpEntity entity = httpResponse.getEntity();
+
+        String message = EntityUtils.toString(entity);
+        System.out.println(message);
+
+        JSONObject jsonObject = JSONObject.parseObject(message);
+
+        JSONArray codeReport = jsonObject.getJSONObject("component").getJSONArray("measures");
+
+        int bugs = 0;
+        int vulnerabilities = 0;
+        int code_smells = 0;
+        float duplicated_lines_density = 0;
+        for (int i = 0; i < 4; i++) {
+            String tag = codeReport.getJSONObject(i).getString("metric");
+            switch (tag){
+                case "bugs":
+                    bugs = codeReport.getJSONObject(i).getInteger("value");
+                case "vulnerabilities":
+                    vulnerabilities = codeReport.getJSONObject(i).getInteger("value");
+                case "code_smells":
+                    code_smells = codeReport.getJSONObject(i).getInteger("value");
+                case "duplicated_lines_density":
+                    duplicated_lines_density = codeReport.getJSONObject(i).getFloat("value");
+            }
+        }
+
+        CodeReport myCodeReport = new CodeReport();
+        myCodeReport.setBugs(bugs);
+        myCodeReport.setCode_smells(code_smells);
+        myCodeReport.setDuplicated_lines_density(duplicated_lines_density);
+        myCodeReport.setVulnerabilities(vulnerabilities);
+
+        return myCodeReport;
     }
 
 

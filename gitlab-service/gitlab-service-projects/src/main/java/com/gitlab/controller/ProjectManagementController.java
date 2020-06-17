@@ -181,6 +181,15 @@ public class ProjectManagementController {
     }
 
     /***
+     * 获取静态测试报告（测试用）
+     */
+    @ApiOperation(value = "获取静态测试报告（测试用）", notes = "获取静态测试报告", tags = {"ProjectManagementController"})
+    @GetMapping(value = "/getReport")
+    public Result getReport() throws Exception {
+        return new Result(true, StatusCode.OK, "获取成功", projectManagementService.getReport());
+    }
+
+    /***
      * 测试代码 6d1d356a26c144f3912301f9074a9d6a  1257931343392669696
      */
     @ApiOperation(value = "测试代码文件", notes = "测试代码文件", tags = {"ProjectManagementController"})
