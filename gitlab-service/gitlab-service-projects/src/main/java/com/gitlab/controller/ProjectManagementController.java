@@ -13,6 +13,7 @@ import entity.StatusCode;
 import io.swagger.annotations.*;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,11 +28,14 @@ import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Api(value = "ProjectManagementController")
 @RestController
 @RequestMapping("/projects/projectInformation")
 @CrossOrigin
+@EnableAsync
 public class ProjectManagementController {
 
     @Autowired
@@ -189,12 +193,13 @@ public class ProjectManagementController {
         return new Result(true, StatusCode.OK, "获取成功", projectManagementService.getReport());
     }
 
+
     /***
      * 测试代码 6d1d356a26c144f3912301f9074a9d6a  1257931343392669696
      */
     @ApiOperation(value = "测试代码文件", notes = "测试代码文件", tags = {"ProjectManagementController"})
-    @GetMapping(value = "/checkFile/{fileID}/{userID}")
-    public Result checkFile(@PathVariable String fileID , @PathVariable String userID) throws Exception {
+    @GetMapping(value = "/checkFile1/{fileID}/{userID}")
+    public Result checkFile1(@PathVariable String fileID , @PathVariable String userID) throws Exception {
         System.out.println("测试开始：");
         //下载文件到本地
         String filename = fileInformationService.downloadFile(fileID);
@@ -278,6 +283,41 @@ public class ProjectManagementController {
         }
         return new Result(true, StatusCode.OK, "测试成功" , Long.toString(task_id));
     }
+
+    /***
+     * 测试代码 6d1d356a26c144f3912301f9074a9d6a  1257931343392669696
+     */
+    @ApiOperation(value = "测试代码文件", notes = "测试代码文件", tags = {"ProjectManagementController"})
+    @GetMapping(value = "/checkFile/{fileID}/{userID}")
+    public Result checkFile(@PathVariable String fileID , @PathVariable String userID) throws Exception {
+        System.out.println("测试开始：");
+        //下载文件到本地
+        String filename = fileInformationService.downloadFile(fileID);
+        if(filename == null){
+            return new Result(true, StatusCode.ERROR, "提交文件失败");
+        }
+        System.out.println("下载文件"+filename);
+
+        //建立任务
+        CodeQualityEvaluation codeQualityEvaluation = new CodeQualityEvaluation();
+        IdWorker idWorker = new IdWorker(0,0);
+        long task_id = idWorker.nextId();
+        Date date = new Date();
+        System.out.println(task_id);
+        codeQualityEvaluation.setTaskId(Long.toString(task_id));
+        codeQualityEvaluation.setPorjVersion("1.0");
+        codeQualityEvaluation.setProjBranch("master");
+        codeQualityEvaluation.setStartTime(date);
+        codeQualityEvaluation.setProjId(fileID);
+        codeQualityEvaluation.setUserId(userID);
+        codeQualityEvaluation.setTaskState(0);
+        codeQualityEvaluationService.add(codeQualityEvaluation);
+
+        fileInformationService.getAll(fileID,userID,filename,Long.toString(task_id));
+
+        return new Result(true, StatusCode.OK, "开始测试" , Long.toString(task_id));
+    }
+
 
 
 }

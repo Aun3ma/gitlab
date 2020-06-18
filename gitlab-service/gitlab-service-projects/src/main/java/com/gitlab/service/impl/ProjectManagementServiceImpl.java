@@ -34,7 +34,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
     @Override
     public FileInformation uploadFile(String projectID, File uploadFile) throws IOException {
         String privateToken = "2-NTBRTswUhGm-4dzmWh";
-        String url = "http://106.55.48.209/api/v4/projects/" + projectID + "/repository/files/" + uploadFile.getName();
+        String url = "http://106.55.247.218/api/v4/projects/" + projectID + "/repository/files/" + uploadFile.getName();
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
@@ -86,7 +86,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
     @Override
     public boolean deleteRepo(String projectID) throws IOException {
         String privateToken = "2-NTBRTswUhGm-4dzmWh";
-        String url = "http://106.55.48.209/api/v4/projects/" + projectID;
+        String url = "http://106.55.247.218/api/v4/projects/" + projectID;
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
@@ -108,7 +108,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
     public ProjectInformation createRepo(
             String userID, String projectName, String description, String visibility) throws IOException, JSONException {
         String privateToken = "2-NTBRTswUhGm-4dzmWh";
-        String url = "http://106.55.48.209/api/v4/projects";
+        String url = "http://106.55.247.218/api/v4/projects";
 
         List<NameValuePair> formparams = new ArrayList<NameValuePair>();
         formparams.add(new BasicNameValuePair("private_token", privateToken));
@@ -156,7 +156,7 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
     public ProjectInformation changeRepoInfo(
             String userID, String projectID, String newProjectName, String newDescription, String visibility) throws IOException {
         String privateToken = "2-NTBRTswUhGm-4dzmWh";
-        String url = "http://106.55.48.209/api/v4/projects/" + projectID;
+        String url = "http://106.55.247.218/api/v4/projects/" + projectID;
 
         List<NameValuePair> formparams = new ArrayList<NameValuePair>();
         formparams.add(new BasicNameValuePair("private_token", privateToken));
@@ -202,11 +202,12 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
 
         try {
             Process p = Runtime.getRuntime().exec(
-                    "cmd /c start /w /MIN C:\\Users\\19134\\Desktop\\SonarQubeTestProgram\\cmd.bat");
+                    "cmd /c start /w /MIN E:\\projects\\SonarQubeTestProgram\\cmd.bat");
             p.waitFor();
             p.destroy();
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
 
         String url = "http://8.129.183.196:9000/api/measures/component?" +
@@ -236,12 +237,16 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
             switch (tag){
                 case "bugs":
                     bugs = codeReport.getJSONObject(i).getInteger("value");
+                    break;
                 case "vulnerabilities":
                     vulnerabilities = codeReport.getJSONObject(i).getInteger("value");
+                    break;
                 case "code_smells":
                     code_smells = codeReport.getJSONObject(i).getInteger("value");
+                    break;
                 case "duplicated_lines_density":
                     duplicated_lines_density = codeReport.getJSONObject(i).getFloat("value");
+                    break;
             }
         }
 

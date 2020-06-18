@@ -6,14 +6,12 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.gitlab.dao.CodeQualityEvaluationMapper;
 import com.gitlab.dao.FileInformationMapper;
+import com.gitlab.projects.dto.CodeReport;
 import com.gitlab.projects.pojo.CodeQualityEvaluation;
 import com.gitlab.projects.pojo.ErrorLine;
 import com.gitlab.projects.pojo.FileInformation;
 import com.gitlab.projects.pojo.ModuleInformation;
-import com.gitlab.service.CodeQualityEvaluationService;
-import com.gitlab.service.ErrorLineService;
-import com.gitlab.service.FileInformationService;
-import com.gitlab.service.ModuleInformationService;
+import com.gitlab.service.*;
 import com.gitlab.tools.DecodeBase64;
 import com.gitlab.tools.HttpDeleteWithBody;
 import com.mysql.cj.x.protobuf.MysqlxExpr;
@@ -32,6 +30,7 @@ import org.apache.http.util.EntityUtils;
 import org.apache.tomcat.jni.FileInfo;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import tk.mybatis.mapper.entity.Example;
@@ -39,6 +38,7 @@ import tk.mybatis.mapper.entity.Example;
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -53,6 +53,18 @@ public class FileInformationServiceImpl implements FileInformationService {
 
     @Autowired
     private FileInformationMapper fileInformationMapper;
+
+    @Autowired
+    private CodeQualityEvaluationService codeQualityEvaluationService;
+
+    @Autowired
+    private ModuleInformationService moduleInformationService;
+
+    @Autowired
+    private ErrorLineService errorLineService;
+
+    @Autowired
+    private ProjectManagementService projectManagementService;
 
     /**
      * FileInformation条件+分页查询
@@ -180,7 +192,7 @@ public class FileInformationServiceImpl implements FileInformationService {
         FileInformation fileInformation = findById(fileID);
 
         String privateToken = "2-NTBRTswUhGm-4dzmWh";
-        String url = "http://106.53.204.22/api/v4/projects/" +
+        String url = "http://106.55.247.218/api/v4/projects/" +
                 fileInformation.getTaskId() + "/repository/files/" + fileInformation.getFilePath();
 
         URI uri = new URIBuilder(url).setParameter("ref", "master").build();
@@ -204,7 +216,7 @@ public class FileInformationServiceImpl implements FileInformationService {
 
         // 静态测试项目路径
         String staticAnalysisFilePath =
-                "C:\\Users\\19134\\Desktop\\SonarQubeTestProgram\\src\\test." + fileName.split("\\.")[1];
+                "E:\\projects\\SonarQubeTestProgram\\src\\test." + fileName.split("\\.")[1];
         DecodeBase64.decoderBase64File(Base64Code, staticAnalysisFilePath);
 
 //        File del = new File(fileName);
@@ -249,7 +261,7 @@ public class FileInformationServiceImpl implements FileInformationService {
         String filePath = fileInformation.getFilePath();
 
         String privateToken = "2-NTBRTswUhGm-4dzmWh";
-        String url = "http://106.55.48.209/api/v4/projects/" + projectID + "/repository/files/" + filePath;
+        String url = "http://106.55.247.218/api/v4/projects/" + projectID + "/repository/files/" + filePath;
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpDeleteWithBody httpDeleteWithBody = new HttpDeleteWithBody(url);
@@ -291,7 +303,7 @@ public class FileInformationServiceImpl implements FileInformationService {
         String filePath = fileInformation.getFilePath();
 
         String privateToken = "2-NTBRTswUhGm-4dzmWh";
-        String url = "http://106.55.48.209/api/v4/projects/" + projectID + "/repository/files/" + filePath;
+        String url = "http://106.55.247.218/api/v4/projects/" + projectID + "/repository/files/" + filePath;
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPut httpPut = new HttpPut(url);
@@ -347,14 +359,14 @@ public class FileInformationServiceImpl implements FileInformationService {
         List<Method> methods = (List<Method>) res.get("methods");
         for(int i=0;i < methods.size();i++){
             try{
-//                File MethodFile = new File("E:\\学校\\大三下\\软件测试项目\\myproject\\gitlab\\my_sdp\\my_pred_dir\\"+i+".java");
-                File MethodFile = new File("/root/project/my_sdp/my_pred_dir/"+i+".java");
+                File MethodFile = new File("E:\\projects\\my_sdp\\my_pred_dir\\"+i+".java");
+//                File MethodFile = new File("/root/project/my_sdp/my_pred_dir/"+i+".java");
                 if(!file.exists()){
                     MethodFile.createNewFile();
                 }
 
-                FileWriter fileWriter = new FileWriter("/root/project/my_sdp/my_pred_dir/"+i+".java");
-
+//                FileWriter fileWriter = new FileWriter("/root/project/my_sdp/my_pred_dir/"+i+".java");
+                FileWriter fileWriter = new FileWriter("E:\\projects\\my_sdp\\my_pred_dir\\"+i+".java");
 
                 fileWriter.write(LogicPositivizer.getMethodBody(methods.get(i),str));
 
@@ -377,9 +389,8 @@ public class FileInformationServiceImpl implements FileInformationService {
         List<String> CodeJson = new ArrayList<>();
         Process proc;
         try {
-//            proc = Runtime.getRuntime().exec("python E:\\学校\\大三下\\软件测试项目\\myproject\\gitlab\\my_sdp\\defect_prediction.py");
-//            proc = Runtime.getRuntime().exec("python my_sdp"+File.separator+"defect_prediction.py");
-            proc = Runtime.getRuntime().exec("python /root/project/my_sdp/defect_prediction.py");
+            proc = Runtime.getRuntime().exec("python E:\\projects\\my_sdp\\defect_prediction.py");
+//            proc = Runtime.getRuntime().exec("python /root/project/my_sdp/defect_prediction.py");
             BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
             String line = null;
             while ((line = in.readLine()) != null) {
@@ -387,10 +398,7 @@ public class FileInformationServiceImpl implements FileInformationService {
             }
             in.close();
             proc.waitFor();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
             return null;
         }
@@ -400,4 +408,105 @@ public class FileInformationServiceImpl implements FileInformationService {
         return jsonObject;
     }
 
+    @Async
+    @Override
+    public void getAll(String fileID ,String userID ,String filename , String task_id){
+        List<Method> methods = null;
+        try {
+            CodeReport codeReport = projectManagementService.getReport();
+            if(codeReport == null){
+                codeQualityEvaluationService.updateById(task_id , 3);
+            }else{
+                CodeQualityEvaluation codeQualityEvaluation = codeQualityEvaluationService.findById(task_id);
+                codeQualityEvaluation.setBugs(Integer.toString(codeReport.getBugs()));
+                codeQualityEvaluation.setVulnerabilities(Integer.toString(codeReport.getVulnerabilities()));
+                codeQualityEvaluation.setDuplicated_lines_density(Float.toString(codeReport.getDuplicated_lines_density()));
+                codeQualityEvaluation.setCode_smells(Integer.toString(codeReport.getCode_smells()));
+                codeQualityEvaluationService.update(codeQualityEvaluation);
+                codeQualityEvaluationService.updateById(task_id , 1);
+                System.out.println("?");
+                methods = checkFile(fileID , userID , filename);
+                if(methods == null){
+                    File del = new File(filename);
+                    del.delete();
+                    codeQualityEvaluationService.updateById(task_id , 11);
+                }else{
+                    //运行方法获取预测结果
+                    JSONObject jsonObject = runPython();
+                    if(jsonObject == null){
+                        File del = new File(filename);
+                        del.delete();
+//                    File del1 = new File("/root/project/my_sdp/my_pred_dir");
+                        File del1 = new File("E:\\projects\\my_sdp\\my_pred_dir");
+                        File[] files = del1.listFiles();
+                        for (File f : files) {
+                            f.delete();
+                        }
+                        codeQualityEvaluationService.updateById(task_id , 12);
+                    }else{
+                        //把方法添加到方法数据库中
+                        for(int i=0 ; i<methods.size() ; i++){
+                            ModuleInformation moduleInformation = new ModuleInformation();
+                            IdWorker idWorker = new IdWorker(0,0);
+                            Long module_id = idWorker.nextId();
+                            moduleInformation.setModuleId(Long.toString(module_id));
+                            moduleInformation.setFileId(task_id);
+                            moduleInformation.setModuleName(methods.get(i).getMethodName());
+                            moduleInformation.setPmdUrl("unknown");
+                            moduleInformation.setMlPredictedResult(jsonObject.getJSONArray("lstm_pred").get(i).toString());
+                            moduleInformationService.add(moduleInformation);
+                        }
+
+                        //把需要注意的行添加到数据库中
+                        JSONArray jsonArray = jsonObject.getJSONArray("topk_list");
+                        for(int i=0 ; i<methods.size() ; i++){
+                            int begin_line = methods.get(i).getBeginLine();
+                            for(int j=0 ; j<jsonArray.getJSONArray(i).size();j++){
+                                if(jsonArray.getJSONArray(i).getInteger(j).equals(0)){
+                                    continue;
+                                }
+                                ErrorLine errorLine = new ErrorLine();
+                                errorLine.setTaskId(task_id);
+                                errorLine.setFileId(fileID);
+                                int line_num = jsonArray.getJSONArray(i).getInteger(j) + begin_line -1;
+                                errorLine.setErrorLine(line_num);
+                                errorLine.setMlPredictedResult(jsonObject.getJSONArray("lstm_pred").get(i).toString());
+                                errorLineService.add(errorLine);
+                            }
+                        }
+
+                        File del = new File(filename);
+                        del.delete();
+//                    File del1 = new File("/root/project/my_sdp/my_pred_dir");
+                        File del1 = new File("E:\\projects\\my_sdp\\my_pred_dir");
+                        File[] files = del1.listFiles();
+                        for (File f : files) {
+                            f.delete();
+                        }
+                        codeQualityEvaluationService.updateById(task_id , 4);
+                        System.out.println("4");
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            File del = new File(filename);
+            if(del.exists()){
+                del.delete();
+            }
+//                    File del1 = new File("/root/project/my_sdp/my_pred_dir");
+            File del1 = new File("E:\\projects\\my_sdp\\my_pred_dir");
+            if(del1.exists()){
+                File[] files = del1.listFiles();
+                for (File f : files) {
+                    f.delete();
+                }
+            }
+            codeQualityEvaluationService.updateById(task_id , 13);
+
+        }
+    }
+
+
 }
+

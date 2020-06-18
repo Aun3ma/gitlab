@@ -71,4 +71,9 @@ public interface CodeQualityEvaluationService {
      * @return
      */
     List<CodeQualityEvaluation> findByUserID(String user_id);
+
+    /***
+     * 修改CodeQualityEvaluation的state
+     */
+    boolean updateById(String task_id , int state);
 }

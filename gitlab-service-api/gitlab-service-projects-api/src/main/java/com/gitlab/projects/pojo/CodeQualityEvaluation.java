@@ -49,6 +49,54 @@ public class CodeQualityEvaluation implements Serializable{
     @Column(name = "end_time")
 	private Date endTime;//
 
+	@ApiModelProperty(value = "",required = false)
+	@Column(name = "bugs")
+	private String bugs;
+
+	@ApiModelProperty(value = "",required = false)
+	@Column(name = "vulnerabilities")
+	private String vulnerabilities;
+
+	@ApiModelProperty(value = "",required = false)
+	@Column(name = "duplicated_lines_density")
+	private String duplicated_lines_density;
+
+
+	@ApiModelProperty(value = "",required = false)
+	@Column(name = "code_smells")
+	private String code_smells;
+
+	public String getBugs() {
+		return bugs;
+	}
+
+	public void setBugs(String bugs) {
+		this.bugs = bugs;
+	}
+
+	public String getVulnerabilities() {
+		return vulnerabilities;
+	}
+
+	public void setVulnerabilities(String vulnerabilities) {
+		this.vulnerabilities = vulnerabilities;
+	}
+
+	public String getDuplicated_lines_density() {
+		return duplicated_lines_density;
+	}
+
+	public void setDuplicated_lines_density(String duplicated_lines_density) {
+		this.duplicated_lines_density = duplicated_lines_density;
+	}
+
+	public String getCode_smells() {
+		return code_smells;
+	}
+
+	public void setCode_smells(String code_smells) {
+		this.code_smells = code_smells;
+	}
 
 
 	//get方法

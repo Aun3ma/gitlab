@@ -139,4 +139,18 @@ public class CodeQualityEvaluationServiceImpl implements CodeQualityEvaluationSe
     public List<CodeQualityEvaluation> findAll() {
         return codeQualityEvaluationMapper.selectAll();
     }
+
+    /***
+     * 修改CodeQualityEvaluation的state
+     */
+    @Override
+    public boolean updateById(String task_id , int state){
+        CodeQualityEvaluation  codeQualityEvaluation = codeQualityEvaluationMapper.selectByPrimaryKey(task_id);
+        if(codeQualityEvaluation != null){
+            codeQualityEvaluation.setTaskState(state);
+            update(codeQualityEvaluation);
+            return true;
+        }
+        return false;
+    }
 }

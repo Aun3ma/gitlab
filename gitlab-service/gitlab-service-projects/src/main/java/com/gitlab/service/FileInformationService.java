@@ -105,5 +105,10 @@ public interface FileInformationService {
      */
     JSONObject runPython();
 
+    /***
+     * 获取代码缺陷
+     */
+    void getAll(String fileID ,String userID ,String filename , String task_id);
+
 
 }
